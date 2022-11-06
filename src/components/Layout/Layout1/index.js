@@ -1,4 +1,4 @@
-import Header from "../DefaultLayout/Header";
+import Header from "../DefaultLayout/Header/Header";
 
 
 function DefaultLayout({ children }) {

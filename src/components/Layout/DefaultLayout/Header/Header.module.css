@@ -1,0 +1,116 @@
+.logo {
+    margin-left: 2rem;
+}
+
+.navbar {
+    background-color: #FBF6F8;
+    padding: 0;
+}
+
+.navbar.scroll {
+    background-color: #7D73C1;
+    color: white;
+}
+
+@media (min-width: 994px) {
+    .link {
+        color: #090526;
+        padding: 1.2rem !important;
+        background-size: 300% 100%;
+        transition: ease-in-out 500ms;
+    }
+
+    .link:hover {
+        background-color: #D9D9D9;
+    }
+
+    .login,
+    .signup {
+        color: white;
+        border-radius: 2rem;
+        margin: 0.9rem;
+        padding: 0.3rem 1.2rem;
+        width: 7rem;
+        text-align: center;
+        background-size: 300% 100%;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+
+    /* vertical padding + margin = 1.2rem */
+
+    .login {
+        margin-left: 1.2rem;
+        background-image: linear-gradient(to right, #3c3373, #090526, #3c3373, #7D73C1);
+    }
+
+    .signup {
+        background-image: linear-gradient(to right, #b3666d, #7D73C1, #b3666d, #FF727D);
+        margin-right: 2.5rem;
+    }
+
+    .login:hover,
+    .signup:hover {
+        /* background-color: #7D73C1; */
+        color: white;
+        background-position: 100% 0;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+    }
+
+    .dropdownBtn {
+        color: #ffffff;
+        -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0), inset 1px 0px 22px -4px rgba(0, 0, 0, 0.35);
+        box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0), inset 1px 0px 22px -4px rgba(0, 0, 0, 0.35);
+        background: #7D73C1;
+        border-radius: 2rem;
+        margin: 0.9rem 2rem 0 2rem;
+        padding: 0.3rem 0.8rem !important;
+    }
+
+    .dropdownContent {
+        text-align: center;
+        list-style-type: none;
+        display: none;
+        padding: 0;
+        background-color: white;
+        margin: 0.3rem 1.6rem;
+        border-radius: 1rem;
+    }
+
+    .dropdownBtn:hover {
+        color: white;
+    }
+
+    .dropdown:hover .dropdownContent {
+        display: block;
+    }
+
+    .dropdownBtn:focus {
+        color: white;
+    }
+}
+
+.headerItem {
+    margin: 0;
+}
+
+.grbut {
+    margin-left: 2rem;
+}
+
+.togglerBut {
+    margin-right: 1rem;
+}
+
+.dropdownItem {
+    border-radius: 1rem;
+    /* padding: 0.5rem 0.3rem;
+    font-size: 0.8rem; */
+}
+.dropdownItem:hover {
+    background-color:#D9D9D9;
+    border-radius: 1rem;
+}
