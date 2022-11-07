@@ -10,7 +10,7 @@ const HomePage3 = () => {
         <React.Fragment>
             <div className={`row ${clsx(style.container3)}`}>
                 <div className={`col-sm-1`}></div>
-                <div className={`col-sm-5 ${clsx(style.text3)}`}>
+                <div data-aos="fade-right" className={`col-sm-5 ${clsx(style.text3)}`}>
                     <h1 className={`${clsx(style.become)}`}>Bạn muốn</h1>
                     <h1 className={`${clsx(style.become)}`}>trở thành gia sư?</h1>
                     <div className={`${clsx(style.normalText, style.whiteText)}`}>

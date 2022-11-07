@@ -12,9 +12,9 @@ const HomePage2 = () => {
             <div className={`row ${clsx(style.container2)}`}>
                 <div className={`col-sm-1`}></div>
                 <div className={`col-sm-4`}>
-                    <img src="./figure_2.png" alt="figure-2" className={`algin-center ${clsx(style.figure2)}`} />
+                    <img data-aos="fade-right" src="./figure_2.png" alt="figure-2" className={`algin-center ${clsx(style.figure2)}`} />
                 </div>
-                <div className={`col-sm-6 ${clsx(style.text2)}`}>
+                <div data-aos="fade-left" className={`col-sm-6 ${clsx(style.text2)}`}>
                     <h1 className={`${clsx(style.inlineHeader)}`}>Bạn muốn </h1>
                     <h1 className={`${clsx(style.inlineHeader, style.pinkHeader)}`}>tìm gia sư?</h1>
                     <div className={`${style.normalText}`}>Tạo tài khoản và gửi yêu cầu tạo lớp!</div>
