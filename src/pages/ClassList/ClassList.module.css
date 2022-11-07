@@ -4,11 +4,9 @@
 }
 
 .table {
-    color: #090526;
-    background-color: white;
-    /* border-spacing: 0 0.8rem;
-    border-collapse: separate; */
-    margin-top: 1rem;
+   color: #090526;
+   background-color: #fff;
+   border-radius: 2rem;
 }
 
 .theader {
