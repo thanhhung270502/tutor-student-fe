@@ -28,6 +28,15 @@ const HomePage1 = () => {
             </div>
             <div className={`col-sm-1`}></div>
         </div>
+        <div className={`${clsx(style.subjects)}`}>
+                <div className={`${clsx(style.subject)}`}>TOÁN</div>
+                <div className={`${clsx(style.subject)}`}>VẬT LÝ</div>
+                <div className={`${clsx(style.subject)}`}>HOÁ HỌC</div>
+                <div className={`${clsx(style.subject)}`}>ANH VĂN</div>
+                <div className={`${clsx(style.subject)}`}>SINH HỌC</div>
+                <div className={`${clsx(style.subject)}`}>NGỮ VĂN</div>
+            </div>
+            <div className={`${clsx(style.bubble)}`}></div>
         </React.Fragment >
     );
 }

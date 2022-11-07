@@ -12,15 +12,6 @@ function Home() {
     return (
         <React.Fragment>
             <HomePage1 />
-            <div className={`${clsx(style.subjects)}`}>
-                <div className={`${clsx(style.subject)}`}>TOÁN</div>
-                <div className={`${clsx(style.subject)}`}>VẬT LÝ</div>
-                <div className={`${clsx(style.subject)}`}>HOÁ HỌC</div>
-                <div className={`${clsx(style.subject)}`}>ANH VĂN</div>
-                <div className={`${clsx(style.subject)}`}>SINH HỌC</div>
-                <div className={`${clsx(style.subject)}`}>NGỮ VĂN</div>
-            </div>
-            <div className={`${clsx(style.bubble)}`}></div>
             <HomePage2 />
             <HomePage3 />
         </React.Fragment>

@@ -28,7 +28,7 @@ const HomePage2 = () => {
                         <div className={`col-md-4 ${clsx(style.cirText)}`}>Kết nối và gặp gỡ gia sư</div>
                         <div className={`col-md-4 ${style.cirText}`}>Bắt đầu lớp học của bạn!</div>
                     </div>
-                    <RButton page="p2"/>
+                    <RButton page="p2" />
                 </div>
             </div>
             <div className={`col-sm-1`}></div>

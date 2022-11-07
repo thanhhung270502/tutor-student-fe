@@ -5,6 +5,7 @@ import { Layout1 } from '~/components/Layout';
 import Home from '~/pages/Home/Home';
 import Test from '~/pages/Test';
 import Upload from '~/pages/Upload';
+import ClassList from '~/pages/ClassList/ClassList';
 
 // Không cần đăng nhập vẫn vào được
 const publicRoutes = [
@@ -24,6 +25,12 @@ const publicRoutes = [
         path: '/upload',
         component: Upload,
         layout: null,
+    },
+    // http://localhost:3000/classlist
+    {
+        path: '/classlist',
+        component: ClassList,
+        layout: Layout1,
     },
 ];
 
