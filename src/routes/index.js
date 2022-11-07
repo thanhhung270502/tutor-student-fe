@@ -2,7 +2,7 @@
 import { Layout1 } from '~/components/Layout';
 
 // Pages
-import Home from '~/pages/Home';
+import Home from '~/pages/Home/Home';
 import Test from '~/pages/Test';
 import Upload from '~/pages/Upload';
 

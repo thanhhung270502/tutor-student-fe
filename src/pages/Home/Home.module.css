@@ -1,0 +1,246 @@
+.container1 {
+    height: 30rem;
+    background-color: #FBF6F8;
+}
+
+.subjects {
+    height: 6.5rem;
+    background-color: #7D73C1;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 2.2rem;
+}
+
+.subject {
+    display: inline;
+    margin: 0 1.5rem;
+}
+
+.container2 {
+    height: 30rem;
+    background-color: #FFF;
+}
+
+.container3 {
+    height: 30rem;
+    background-color: #FF727D;
+}
+
+.text1 {
+    padding: 7rem 0;
+}
+
+.connect {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #F3AC46;
+    padding: 0;
+}
+
+.slogan {
+    color: #FF727D;
+    font-size: 2.4rem;
+}
+
+.slogan:nth-of-type(1) {
+    font-weight: 900;
+    color: #090526;
+}
+
+.quote {
+    font-weight: 100;
+    font-size: 0.7rem;
+    color: #828282;
+}
+
+.figure1,
+.figure2 {
+    width: 100%;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.bubble {
+    width: 3rem;
+    height: 3rem;
+    background-color: #C0FAC7;
+    border-radius: 3rem;
+    margin: -8rem 0 5rem 6rem;
+}
+
+@media (min-width: 1300px) {
+    .subjects {
+        margin: 3rem 0 0 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .subjects {
+        padding: 2.75rem 0;
+        font-size: 1rem;
+    }
+
+    .connect {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #F3AC46;
+        padding: 0;
+    }
+
+    .slogan {
+        color: #FF727D;
+        font-size: 2rem;
+    }
+
+    .slogan:nth-of-type(1) {
+        font-weight: 900;
+        color: #090526;
+    }
+
+    .quote {
+        font-weight: 100;
+        font-size: 0.6rem;
+        color: #828282;
+    }
+}
+
+@media (max-width: 768px) {
+    .subjects {
+        height: 4rem;
+        padding: 1.7rem 0;
+        font-size: 0.6rem;
+    }
+
+    .text1 {
+        padding: 6rem 0;
+    }
+
+    .connect {
+        font-size: 0.5rem;
+        font-weight: 700;
+        color: #F3AC46;
+        padding: 0;
+    }
+
+    .slogan {
+        color: #FF727D;
+        font-size: 1.5rem;
+    }
+
+    .slogan:nth-of-type(1) {
+        font-weight: 900;
+        color: #090526;
+    }
+
+    .quote {
+        font-weight: 100;
+        font-size: 0.5rem;
+        color: #828282;
+    }
+}
+
+@media (max-width: 576px) {
+    .container1 {
+        height: 35rem;
+    }
+
+    .subjects {
+        font-size: 0.4rem;
+    }
+
+    .text1 {
+        padding: 3rem 3rem 0 3rem;
+    }
+
+    .figure1 {
+        padding: 3rem;
+    }
+}
+
+/* page 2*/
+.inlineHeader {
+    color: #090526;
+    display: inline;
+}
+
+.pinkHeader {
+    color: #FF727D;
+    font-weight: 700;
+}
+
+.text2 {
+    padding: 5rem;
+}
+
+.normalText {
+    margin: 0.5rem 0;
+    color: #828282;
+}
+
+
+.cirNum {
+    color: #090526;
+    background-color: #C0FAC7;
+    justify-content: center;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 40px;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.cir2 {
+    background-color: #F3AC46
+}
+
+.cir3 {
+    background-color: #FF727D;
+}
+
+.cirText {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.steps {
+    padding: 0;
+}
+
+
+/* --------*/
+/* page 3*/
+.become:nth-of-type(2) {
+    font-weight: 700;
+    color: #C0FAC7;
+}
+
+.whiteText {
+    color: white;
+}
+
+.cir11 {
+    color: #FFF;
+    background: #F3AC46;
+}
+
+.cir22 {
+    color: #FFF;
+    background: #B275E4;
+}
+
+.cir33 {
+    color: #FFF;
+    background: #090526;
+}
+
+.text3 {
+    padding: 3em 0;
+}
+
+.bubbleFig {
+    padding: 2rem;
+}
