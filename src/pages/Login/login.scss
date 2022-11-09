@@ -1,0 +1,29 @@
+.sign__container {
+    padding: 2rem 0;
+}
+
+.inner__container {
+    padding: 2rem;
+}
+
+.login__left {
+    background-color: var(--gray-light);
+    color: var(--black);
+    padding: 2rem;
+}
+
+.sign__title {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem 0 2rem;
+
+    h1 {
+        color: aliceblue;
+    }
+}
+
+.btn-purple {
+    background-color: var(--purple);
+    border-color: var(--purple) ;
+}

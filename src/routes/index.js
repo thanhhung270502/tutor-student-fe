@@ -3,6 +3,8 @@ import { Layout1 } from '~/components/Layout';
 
 // Pages
 import Home from '~/pages/Home';
+import Login from '~/pages/Login';
+import SignIn from '~/pages/Signin';
 import Test from '~/pages/Test';
 import Upload from '~/pages/Upload';
 
@@ -23,6 +25,17 @@ const publicRoutes = [
     {
         path: '/upload',
         component: Upload,
+        layout: null,
+    },
+    // http://localhost:3000/login
+    {
+        path: '/login',
+        component: Login,
+        layout: null,
+    },    
+    {
+        path: '/signin',
+        component: SignIn,
         layout: null,
     },
 ];

@@ -4,24 +4,28 @@
 // Import font
 // @import url();
 
-
 // Color
 :root {
     --red: #fe2c55;
-    --dark-yellow: #F3AC46;
-    --pink: #FF727D;
-    --green: #C0FAC7;
+    --dark-yellow: #f3ac46;
+    --pink: #ff727d;
+    --green: #c0fac7;
     --gray: #828282;
     --black: #090526;
-    --purple: #7D73C1;
+    --purple: #7d73c1;
+    --gray-light: #DEDEDE;
 }
 
 * {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    padding: 0;
+    margin: 0;
 }
 
-html {}
+html {
+}
 
-body {}
+body {
+}
