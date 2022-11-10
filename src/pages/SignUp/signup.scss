@@ -1,0 +1,47 @@
+.sign__left {
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 0 2rem;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    text-align: center;
+
+    h1 {
+        font-weight: bold;
+        padding-top: 5rem;
+    }
+}
+
+.sign__right {
+    background-color: var(--gray-light);
+    color: var(--black);
+    padding: 2rem 4rem;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.sign_up_img {
+    width: 250px;
+    padding-top: 2rem;
+}
+
+.left__title {
+    font-size: 3.5rem;
+}
+
+
+@media (max-width: 991px) {
+    .sign__left {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .sign__right {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+}
