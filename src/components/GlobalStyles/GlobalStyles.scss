@@ -1,4 +1,6 @@
 @import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
 
 // Import font
 // @import url();
@@ -10,10 +12,13 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
 }
 
 html {
 }
 
 body {
+    background-color: #FBF6F8;
+    font-weight: 400;
 }

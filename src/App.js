@@ -1,40 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { publicRoutes } from '~/routes';
-import { DefaultLayout } from '~/components/Layout';
-import { Fragment } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import React from 'react'
+import Layout from '~/components/Layout/DefaultLayout/Layout';
+
+import Home from './pages/Home/Home.js'
+import ClassList from './pages/ClassList/ClassList'
+import Personal_info from './pages/personal_info/index.js';
 
 function App() {
     return (
-        <Router>
-            <div className="App">
-                <Routes>
-                    {publicRoutes.map((route, index) => {
-                        // const Layout = route.layout === null ? Fragment : DefaultLayout;
-                        const Page = route.component;
 
-                        let Layout = DefaultLayout;
+        <Layout>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/classlist" element={<ClassList />} />
+                <Route path="/personal_info" element={<Personal_info />} />
 
-                        if (route.layout) {
-                            Layout = route.layout;
-                        } else if (route.layout === null) {
-                            Layout = Fragment;
-                        }
+            </Routes>
+        </Layout >
 
-                        return (
-                            <Route
-                                key={index}
-                                path={route.path}
-                                element={
-                                    <Layout>
-                                        <Page />
-                                    </Layout>
-                                }
-                            />
-                        );
-                    })}
-                </Routes>
-            </div>
-        </Router>
     );
 }
 

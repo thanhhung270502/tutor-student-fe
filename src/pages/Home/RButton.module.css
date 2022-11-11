@@ -1,0 +1,48 @@
+.container {
+    margin: 2rem 0;
+}
+
+.button {
+    color: #090526;
+    background-size: 300% 100%;
+    padding: 0.5rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 1.5rem;
+    box-shadow: -1px 3px 20px 0px rgba(0, 0, 0, 0.141);
+    margin: 0 1rem;
+}
+
+.button:hover {
+    color: #FFF;
+    background-position: 50% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.findTutor {
+    background-image: linear-gradient(to right, #7D73C1, #B275E4, #d175e4, #7D73C1);
+}
+
+.becomeTutor {
+    background-image: linear-gradient(to right, #ffffff, #efefef, #feefff, #ffffff);
+}
+
+.becomeTutor:hover {
+    color:#090526;
+}
+
+.arrow:nth-of-type(1) {
+    color: #7D73C1;
+    margin-right: 0.1rem;
+}
+
+.arrow {
+    color: #B275E4;
+    box-shadow: -1px 3px 20px 0px rgba(0, 0, 0, 0.141);
+}
+
+.whiteArrow {
+    color: #FFF;
+}

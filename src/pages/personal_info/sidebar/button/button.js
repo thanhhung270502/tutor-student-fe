@@ -1,12 +1,10 @@
 import className from 'classnames/bind';
 import styles from './button.module.scss';
 import { useState } from 'react';
-import { createStore } from 'state-pool';
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import Table from '~/pages/personal_info/table'
 
 const cx = className.bind(styles);
-const store = createStore();
 var ID = 0;
 function Button () {
     const [buttonID, setButtonID] = useState(0);
