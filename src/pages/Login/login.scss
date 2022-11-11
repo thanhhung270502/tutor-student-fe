@@ -1,0 +1,95 @@
+.sign__container {
+    padding: 2rem 0;
+}
+
+.inner__container {
+    padding: 2rem;
+}
+
+.login__left {
+    background-color: var(--gray-light);
+    color: var(--black);
+    padding: 2rem 4rem;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.sign__title {
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 1rem 0 3rem;
+}
+//
+.login__right {
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 0 2rem;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    text-align: center;
+
+    h1 {
+        font-weight: bold;
+        padding-top: 5rem;
+    }
+}
+
+.book {
+    width: 200px;
+    padding-top: 2rem;
+}
+
+.btn-purple {
+    background-color: var(--purple);
+    border-color: var(--purple);
+    width: fit-content;
+    color: var(--white);
+    padding: 12px 70px;
+    margin: auto;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+        color: var(--white);
+    }
+}
+
+.btn-gray {
+    background-color: var(--gray);
+    border-color: var(--gray);
+    width: fit-content;
+    color: var(--white);
+    padding: 12px 70px;
+    margin: auto;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+        color: var(--white);
+    }
+}
+
+.forget__password {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 991px) {
+    .login__left {
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .login__right {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+}
