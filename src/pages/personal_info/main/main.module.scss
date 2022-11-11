@@ -1,0 +1,54 @@
+.wrapper {
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-left: 20px;
+    .title {
+        text-align: center;
+        font-size: 17px;
+        font-weight: 700;
+        padding-top: 10px;
+    }
+    .input {
+        width: 100%;
+        padding: 0px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        .fieldName {
+            display: block;
+            padding-top: 10px;
+            padding-bottom: 1px;
+        }
+
+        .inputField {
+            width: 100%;
+            border-color: #B275E4;
+            border-radius: 10px;
+            block-size: 30px;
+            font-size: 15px;
+            height: 30px;
+        }
+    }
+    input:disabled {
+        background-color: rgb(235, 235, 235);
+    }
+    .save {
+        display: flex;
+        margin-left: 306px;
+        padding: 10px 30px;
+        border-radius: 15px;
+        border: none;
+        background-color: #FF727D;
+        color: #fff;
+        &:hover {
+            background-color: #ec4a57;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+
