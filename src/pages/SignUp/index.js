@@ -6,6 +6,9 @@ import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
+// const choose = document.getElementById("inputGroupSelect01");
+// console.log(choose.value);
+
 function SignUp() {
     return (
         <div className="sign__container">
@@ -133,5 +136,4 @@ function SignUp() {
         </div>
     );
 }
-
 export default SignUp;
