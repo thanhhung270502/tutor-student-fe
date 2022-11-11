@@ -118,10 +118,10 @@ function Header() {
             </button>
             <div className={`collapse navbar-collapse ${style.grbut}`} id="navLinks">
                 <ul className={`navbar-nav ms-auto`}>
-                    {/* <Guest /> */}
+                    <Guest />
                     {/* <SystemAdmin /> */}
                     {/* <ProfessionalAdmin /> */}
-                    <Student />
+                    {/* <Student /> */}
                 </ul>
             </div>
         </nav>
