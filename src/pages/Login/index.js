@@ -22,7 +22,7 @@ function Login() {
                                         id="floatingInput"
                                         placeholder="name@example.com"
                                     ></input>
-                                    <label for="floatingInput">Email address</label>
+                                    <label htmlFor="floatingInput">Email address</label>
                                 </div>
                                 <div className={cx('form-floating')}>
                                     <input
@@ -31,16 +31,16 @@ function Login() {
                                         id="floatingPassword"
                                         placeholder="Password"
                                     ></input>
-                                    <label for="floatingPassword">Password</label>
+                                    <label htmlFor="floatingPassword">Password</label>
                                 </div>
-                                <div class="form-check mt-3">
+                                <div className="form-check mt-3">
                                     <input
-                                        class="form-check-input"
+                                        className="form-check-input"
                                         type="checkbox"
                                         value=""
                                         id="flexCheckDefault"
                                     ></input>
-                                    <label class="form-check-label" for="flexCheckDefault">
+                                    <label className="form-check-label" htmlFor="flexCheckDefault">
                                         <div className={cx('forget__password')}>Remember me</div>
                                     </label>
                                 </div>
