@@ -24,12 +24,12 @@ const ClassList = () => {
     }, []);
 
     return (
-        <React.Fragment>
+        <div className={`container`}>
             <h4 className={style.header}>Danh sách lớp đang tìm Gia sư</h4>
-            <table className={`table table-borderless ${style.table}`}>
+            <Table className={`table table-borderless ${style.table}`}>
                 <thead className={style.theader}>
                     <tr>
-                        <th className={`col-md-3 ${style.th} ${style.hihi}`}>MÃ LỚP</th>
+                        <th className={`col-md-3 ${style.th}`}>MÃ LỚP</th>
                         <th className={`col-md-3 ${style.th}`}>MÔN</th>
                         <th className={`col-md-3 ${clsx(style.th, style.center)}`}>LỚP</th>
                         <th className={`col-md-3 ${style.th}`}>NGÀY ĐĂNG KÝ</th>
@@ -39,12 +39,12 @@ const ClassList = () => {
                 <tbody>
                     {
                         classInfo.map(
-                            (c, index) => <Row key={index} data={classInfo[index]} c={c}/>
+                            (c, index) => <Row key={index} data={classInfo[index]} c={c} />
                         )
                     }
                 </tbody>
-            </table>
-        </React.Fragment>
+            </Table>
+        </div>
     );
 }
 
