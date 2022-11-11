@@ -7,6 +7,9 @@ import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
+// const choose = document.getElementById("inputGroupSelect01");
+// console.log(choose.value);
+
 function SignUp() {
     const [upload, setUpload] = useState(false);
     return (
@@ -144,5 +147,4 @@ function SignUp() {
         </div>
     );
 }
-
 export default SignUp;

@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
-import clsx from 'clsx';
 import './login.scss';
 import images from '~/assets/images';
 
