@@ -8,10 +8,11 @@
     background-color: #fff;
     border-radius: 2rem;
     margin-top: 1rem;
+    box-shadow: 3px 2px 20px -3px rgba(0, 0, 0, 0.113);
 }
 
 .theader {
-    background-color: #ff727e;
+    background-color: #ff97a5;
 }
 
 .th {

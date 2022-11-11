@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './SignUp.module.scss';
+import { useState } from 'react'
 import './signup.scss';
 import '~/pages/Login/login.scss';
 import images from '~/assets/images';
@@ -7,6 +8,7 @@ import images from '~/assets/images';
 const cx = classNames.bind(styles);
 
 function SignUp() {
+    const [upload, setUpload] = useState(false);
     return (
         <div className="sign__container">
             <div className="container">
@@ -32,7 +34,7 @@ function SignUp() {
                                         id="floatingInput"
                                         placeholder="name@example.com"
                                     ></input>
-                                    <label for="floatingInput">Họ và tên</label>
+                                    <label htmlFor="floatingInput">Họ và tên</label>
                                 </div>
                                 <div className={cx('form-floating mb-3')}>
                                     <input
@@ -41,7 +43,7 @@ function SignUp() {
                                         id="floatingInput"
                                         placeholder="name@example.com"
                                     ></input>
-                                    <label for="floatingInput">Email</label>
+                                    <label htmlFor="floatingInput">Email</label>
                                 </div>
                                 <div className={cx('form-floating mb-3')}>
                                     <input
@@ -50,7 +52,7 @@ function SignUp() {
                                         id="floatingPassword"
                                         placeholder="Password"
                                     ></input>
-                                    <label for="floatingPassword">Mật khẩu</label>
+                                    <label htmlFor="floatingPassword">Mật khẩu</label>
                                 </div>
                                 <div className={cx('form-floating mb-3')}>
                                     <input
@@ -59,15 +61,16 @@ function SignUp() {
                                         id="floatingPassword"
                                         placeholder="Password"
                                     ></input>
-                                    <label for="floatingPassword">Xác nhận mật khẩu</label>
+                                    <label htmlFor="floatingPassword">Xác nhận mật khẩu</label>
                                 </div>
-                                <div class="form-floating mb-3">
+                                <div className
+                                    ="form-floating mb-3">
                                     <textarea
                                         className="form-control"
                                         placeholder="Leave a comment here"
                                         id="floatingTextarea"
                                     ></textarea>
-                                    <label for="floatingTextarea">Địa chỉ</label>
+                                    <label htmlFor="floatingTextarea">Địa chỉ</label>
                                 </div>
                                 <div className="row">
                                     <div className="col-lg-6 col-md-12">
@@ -78,7 +81,7 @@ function SignUp() {
                                                 id="floatingInput"
                                                 placeholder="name@example.com"
                                             ></input>
-                                            <label for="floatingInput">Số điện thoại</label>
+                                            <label htmlFor="floatingInput">Số điện thoại</label>
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-12">
@@ -89,31 +92,39 @@ function SignUp() {
                                                 id="floatingInput"
                                                 placeholder="name@example.com"
                                             ></input>
-                                            <label for="floatingInput">CMND/CCCD</label>
+                                            <label htmlFor="floatingInput">CMND/CCCD</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="col-lg-6 col-md-12">
                                         <div className="input-group mb-3">
-                                            <label className="input-group-text" for="inputGroupSelect01">
+                                            <label className="input-group-text" htmlFor="inputGroupSelect01">
                                                 Bạn là
                                             </label>
-                                            <select className="form-select" id="inputGroupSelect01">
-                                                <option selected>Choose...</option>
+                                            <select className="form-select"
+                                                id="inputGroupSelect01"
+                                                onChange={async (event) => {
+                                                    event.target.value == "2" ? setUpload(true) : setUpload(false)
+                                                }}
+                                            >
+                                                <option defaultValue="0">Choose...</option>
                                                 <option value="1">Học viên</option>
                                                 <option value="2">Gia sư</option>
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="col-lg-6 col-md-12">
-                                        <div className="input-group mb-3">
-                                            <label className="input-group-text" for="inputGroupFile01">
-                                                Upload
-                                            </label>
-                                            <input type="file" className="form-control" id="inputGroupFile01"></input>
-                                        </div>
-                                    </div>
+                                    {
+                                        (upload &&
+                                            <div className="col-lg-6 col-md-12">
+                                                <div className="input-group mb-3">
+                                                    <label className="input-group-text" htmlFor="inputGroupFile01">
+                                                        Upload
+                                                    </label>
+                                                    <input type="file" className="form-control" id="inputGroupFile01"></input>
+                                                </div>
+                                            </div>)
+                                    }
                                 </div>
                                 <div className="text-center pt-3 pb-4">
                                     <a className="btn-purple" href="#">
