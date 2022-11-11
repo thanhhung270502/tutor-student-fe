@@ -1,5 +1,6 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
 
 // Import font
 // @import url();
@@ -8,20 +9,16 @@
 // Color
 :root {
     --red: #fe2c55;
-    --dark-yellow: #F3AC46;
-    --pink: #FF727D;
-    --green: #C0FAC7;
-    --gray: #828282;
-    --black: #090526;
-    --purple: #7D73C1;
 }
 
 * {
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-family: 'Mulish', sans-serif;
 }
 
 html {}
 
-body {}
+body {
+    background-color: #FBF6F8;
+    font-weight: 400;
+}
