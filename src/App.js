@@ -6,6 +6,7 @@ import Home from './pages/Home/Home.js'
 import ClassList from './pages/ClassList/ClassList'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
+import Personal_info from './pages/personal_info/index.js';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/classlist" element={<ClassList />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
+                <Route path="/personal_info" element={<Personal_info />} />
             </Routes>
         </Layout >
 
