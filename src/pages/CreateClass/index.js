@@ -2,7 +2,7 @@ import './create_class.scss';
 
 function Createclass() {
     return (
-        <div className="p-3">
+        <div className="p-3 pt-5 pb-4">
             <div className="container">
                 <div className="create_class__container">
                     <h3>Tạo lớp</h3>
@@ -108,9 +108,87 @@ function Createclass() {
                                 <label for="exampleFormControlInput1" className="form-label">
                                     Số điện thoại
                                 </label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="0923 123 123"></input>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    placeholder="0923 123 123"
+                                ></input>
                             </div>
                         </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-6">
+                            <label for="exampleFormControlInput1" className="form-label">
+                                Độ dài khóa học
+                            </label>
+                            <div className="row">
+                                <div className="col-6">
+                                    <div class="mb-3">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="exampleFormControlInput1"
+                                            placeholder="Từ..."
+                                        ></input>
+                                    </div>
+                                </div>
+                                <div className="col-6">
+                                    <div class="mb-3">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="exampleFormControlInput1"
+                                            placeholder="Đến..."
+                                        ></input>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-6">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" className="form-label">
+                                    Trình độ gia sư
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    placeholder="0923 123 123"
+                                ></input>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-6">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" className="form-label">
+                                    Lương
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    placeholder="2.000.000đ"
+                                ></input>
+                            </div>
+                        </div>
+                        <div className="col-6">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" className="form-label">
+                                    Yêu cầu khác
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    placeholder="E.g: Gia sư nữ,..."
+                                ></input>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="text-end">
+                        <div className="btn btn-danger btn-create">Tạo</div>
                     </div>
                 </div>
             </div>
