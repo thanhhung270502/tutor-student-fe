@@ -5,7 +5,6 @@
 // Import font
 // @import url();
 
-
 // Color
 :root {
     --red: #fe2c55;
@@ -14,12 +13,12 @@
 * {
     box-sizing: border-box;
     font-family: 'Mulish', sans-serif;
-    font-weight: 400;
 }
 
-html {}
+html {
+}
 
 body {
-    background-color: #FBF6F8;
+    background-color: #fbf6f8;
     font-weight: 400;
 }
