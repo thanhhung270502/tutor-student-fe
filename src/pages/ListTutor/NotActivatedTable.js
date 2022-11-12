@@ -79,7 +79,7 @@ export default function Render() {
     return (
         <Table className='shadow rounded-4' striped hover>
             <thead className='custom-thead'>
-                <tr>
+                <tr id="#TH">
                     <th onClick={() => sorting("ID")}>
                         ID
                     </th>
