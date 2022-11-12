@@ -2,7 +2,7 @@ import className from 'classnames/bind'
 import styles from './table.module.scss'
 import React, {Children, useMemo} from 'react';
 import { useState, useEffect } from 'react';
-import { useTable } from 'react';
+import { useTable } from 'react-table';
 import Data from './data.json';
 import { Columns } from './column';
 import { getDefaultNormalizer } from '@testing-library/react';

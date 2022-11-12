@@ -27,7 +27,7 @@ function RenderTutor(tutor) {
 
     return (
         <>
-            <tr key={tutor.ID} onClick={handleClickDetail}>
+            <tr id="#TH" key={tutor.ID} onClick={handleClickDetail}>
                 <td> {tutor.ID} </td>
                 <td> {tutor.name} </td>
                 <td> {tutor.registionDay} </td>
