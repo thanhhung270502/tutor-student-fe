@@ -27,7 +27,7 @@ const UserAccounts = () => {
 
     return (
         <div className={cx('container')}>
-            <h4 className={style.header}>Tình trạng thanh toán lớp</h4>
+            <h4 className={style.header}>Danh sách tài khoản người dùng</h4>
             <Table className={`table table-borderless ${style.table}`}>
                 <thead className={style.theader}>
                     <tr>
