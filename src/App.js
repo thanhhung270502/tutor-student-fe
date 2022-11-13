@@ -11,6 +11,8 @@ import Login from './pages/Login';
 import Personal_info from './pages/personal_info/index.js';
 import ListTutor from './pages/ListTutor/index.js';
 import PendingClass from './pages/PendingClass/PendingClass';
+import PaymentStatus from './pages/payment_status//PaymentStatus'
+import UserAccounts from './pages/userAccounts/userAccounts.js';
 
 function App() {
     return (
@@ -25,6 +27,10 @@ function App() {
                 <Route path="/tutorlist" element={<ListTutor />} />
 
                 <Route path="/pendingClass" element={<PendingClass />} />
+
+                <Route path="/paymentStatus" element={<PaymentStatus />}/>
+                <Route path="/userAccounts" element={<UserAccounts />}/>
+
             </Routes>
         </Layout>
     );

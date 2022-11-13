@@ -1,0 +1,92 @@
+[
+    {
+        "name": "NGUYỄN VĂN A",
+        "accountCreatedate": "02/02/2022",
+        "role": "Phụ huynh / Học sinh",
+        "birth": "19/02/2002",
+        "email": "anv1902@gmail.com",
+        "phoneNumber": "090102844",
+        "CCCD": "0123456789",
+        "address": "Nhà số 123, đường AAA BBB CCC, Phường A, quận BC, TP.XYZ"
+    },
+    {
+        "name": "LÊ VĂN B",
+        "accountCreatedate": "20/11/2022",
+        "role": "Quản lí chuyên môn",
+        "birth": "10/01/2000",
+        "email": "blv1001@gmail.com",
+        "phoneNumber": "08661352135",
+        "CCCD": "0987654321",
+        "address": "Nhà số 123, đường AAA BBB CCC, Phường A, quận BC, TP.XYZ"
+    },
+    {
+        "name": "TRẦN VĂN C",
+        "accountCreatedate": "07/06/2023",
+        "role": "Gia Sư",
+        "birth": "07/09/2004",
+        "email": "ctv0709@gmail.com",
+        "phoneNumber": "0905001007",
+        "CCCD": "0654879321",
+        "address": "Nhà số 123, đường AAA BBB CCC, Phường A, quận BC, TP.XYZ"
+    },
+    {
+        "name": "NGUYỄN VĂN D",
+        "accountCreatedate": "02/02/2022",
+        "role": "Phụ huynh / Học sinh",
+        "birth": "12/12/2001",
+        "email": "dnv1212@gmail.com",
+        "phoneNumber": "09023452844",
+        "CCCD": "01355767567",
+        "address": "Nhà số 123, đường AAA BBB CCC, Phường A, quận BC, TP.XYZ"
+    },
+    {
+        "name": "LÊ VĂN E",
+        "accountCreatedate": "22/01/2022",
+        "role": "Gia Sư",
+        "birth": "03/03/2000",
+        "email": "elv0303@gmail.com",
+        "phoneNumber": "086234235135",
+        "CCCD": "09836567859",
+        "address": "Nhà số 123, đường AAA BBB CCC, Phường A, quận BC, TP.XYZ"
+    },
+    {
+        "name": "TRẦN VĂN G",
+        "accountCreatedate": "06/07/2023",
+        "role": "Gia Sư",
+        "birth": "10/09/2004",
+        "email": "gtv1009@gmail.com",
+        "phoneNumber": "090656877",
+        "CCCD": "06534687973",
+        "address": "Nhà số 123, đường AAA BBB CCC, Phường A, quận BC, TP.XYZ"
+    },
+    {
+        "name": "NGUYỄN VĂN H",
+        "accountCreatedate": "03/02/2022",
+        "role": "Phụ huynh / Học sinh",
+        "birth": "19/11/2002",
+        "email": "hnv1911@gmail.com",
+        "phoneNumber": "0967874634",
+        "CCCD": "01923758994",
+        "address": "Nhà số 123, đường AAA BBB CCC, Phường A, quận BC, TP.XYZ"
+    },
+    {
+        "name": "LÊ VĂN K",
+        "accountCreatedate": "20/10/2022",
+        "role": "Gia Sư",
+        "birth": "10/10/2000",
+        "email": "klv1010@gmail.com",
+        "phoneNumber": "08238573465",
+        "CCCD": "08328957103",
+        "address": "Nhà số 123, đường AAA BBB CCC, Phường A, quận BC, TP.XYZ"
+    },
+    {
+        "name": "TRẦN VĂN L",
+        "accountCreatedate": "01/11/2023",
+        "role": "Gia Sư",
+        "birth": "02/09/2004",
+        "email": "ltv0209@gmail.com",
+        "phoneNumber": "089346457",
+        "CCCD": "02136541078",
+        "address": "Nhà số 123, đường AAA BBB CCC, Phường A, quận BC, TP.XYZ"
+    }
+]
