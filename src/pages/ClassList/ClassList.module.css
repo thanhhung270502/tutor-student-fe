@@ -57,3 +57,10 @@
 .icon {
     margin-right: 0.3rem;
 }
+
+.option {
+    width: 1rem;
+    background: none;
+    border: none;
+    margin: 0 0.3rem;
+}
