@@ -24,6 +24,26 @@ const UserAccounts = () => {
 
         setClassInfo(data);
     }, []);
+    const [c, setC] = useState(0);
+    const [order, setOrder] = useState("ASC");
+    const sorting = (col) => {
+        if(order == "ASC") {
+            const sorted = [...classInfo].sort((a, b) => 
+                a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+            );
+            setClassInfo(sorted);
+            setOrder("DSC");
+            setC(col);
+        }
+        if(order == "DSC") {
+            const sorted = [...classInfo].sort((a, b) => 
+                a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
+            );
+            setClassInfo(sorted);
+            setOrder("ASC");
+            setC(0);
+        }
+    }
 
     return (
         <div className={cx('container')}>
@@ -31,9 +51,21 @@ const UserAccounts = () => {
             <Table className={`table table-borderless ${style.table}`}>
                 <thead className={style.theader}>
                     <tr>
-                        <th className={`col-md-2 ${clsx(style.th, style.center)}`}>HỌ TÊN</th>
-                        <th className={`col-md-3 ${clsx(style.th, style.center)}`}>NGÀY ĐĂNG KÝ</th>
-                        <th className={`col-md-1 ${clsx(style.th, style.center)}`}>QUYỀN</th>
+                        <th className={`col-md-2 ${clsx(style.th, style.center)}`} onClick={()=>sorting("name")}>HỌ TÊN
+                            <span className={`col-md-2 ${clsx(style.column)}`}>
+                                {c == "name" ? '▲' : '▼'}
+                            </span>
+                        </th>
+                        <th className={`col-md-3 ${clsx(style.th, style.center)}`} onClick={()=>sorting("accountCreatedate")}>NGÀY ĐĂNG KÝ
+                            <span className={`col-md-2 ${clsx(style.column)}`}>
+                                {c == "accountCreatedate" ? '▲' : '▼'}
+                            </span>
+                        </th>
+                        <th className={`col-md-1 ${clsx(style.th, style.center)}`} onClick={()=>sorting("role")}>QUYỀN
+                            <span className={`col-md-2 ${clsx(style.column)}`}>
+                                {c == "role" ? '▲' : '▼'}
+                            </span>
+                        </th>
                         <th className={`col-md-2 ${clsx(style.th, style.center)}`}></th>
                         {/*<th className={`col-md-2 ${style.th}`}></th>*/}
                     </tr>
