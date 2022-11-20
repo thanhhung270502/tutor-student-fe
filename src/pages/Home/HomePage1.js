@@ -7,11 +7,13 @@ import 'aos/dist/aos.css';
 import style from './Home.module.css'
 
 const HomePage1 = () => {
+    useEffect(() => {
+        AOS.init({
+          duration : 2000
+        });
+      }, []);
     return (
         <React.Fragment>
-            {AOS.init({
-                duration: 1200,
-            })}
             < div className={`row ${clsx(style.container1)}`}>
                 <div className={`col-sm-1`}></div>
                 <div data-aos="fade-right" className={`col-sm-4 ${clsx(style.text1)}`} >

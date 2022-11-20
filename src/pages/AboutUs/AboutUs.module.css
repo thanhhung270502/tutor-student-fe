@@ -1,0 +1,40 @@
+.container {
+    
+}
+
+.layout {
+    margin: 1.5rem 0;
+    color: #090526;
+}
+
+.h1 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.purple {
+    color: #7D73C1;
+}
+
+.pink {
+    color: #FF727D;
+}
+
+.orange {
+    color: #F3AC46;
+}
+
+.bott {
+    margin-bottom: 1rem;
+}
+
+.p {
+    text-align: justify;
+    font-size: 0.9rem;
+    color: #2d2a48;
+}
+
+.figure3 {
+    padding: 4rem;
+    width: 100%;
+}
