@@ -1,3 +1,7 @@
+.container {
+    min-height: 50rem;
+}
+
 .header {
     font-weight: 700;
     margin-top: 2rem;
@@ -44,6 +48,22 @@
 .center {
     text-align: center;
 }
+
+.pagi {
+    background-color: #ff97a5;
+    color:#090526;
+    padding: 0 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    margin: 0 1rem;
+}
+
+.pagi:hover {
+    background-color: #cb7e88;
+    color: #fff;
+    transition: .5s;
+}
+
 
 
 /* *******ROW******* */

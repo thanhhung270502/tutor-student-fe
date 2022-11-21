@@ -4,6 +4,7 @@ import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
 import style from './ClassList.module.css'
 import { Table } from 'react-bootstrap'
+import { usePagination } from 'react-use-pagination';
 import data from './ClassList.json'
 
 import Row from './Row'
@@ -14,17 +15,6 @@ const ClassList = () => {
     const [show, setShow] = useState(false);
     const [grade, setGrade] = useState("all");
     const [subject, setSubject] = useState("all");
-
-
-    useEffect(() => {
-        /* use api / wait until data is updated
-        async () => {
-            info = await getClassInfo();
-            setClassInfo(info);
-        } */
-
-        setClassInfo(data);
-    }, []);
 
     const handleFilteredSubject = (e) => {
         const selected = e.target.value;
@@ -46,9 +36,44 @@ const ClassList = () => {
         // setGrade(selected);
     }
 
+    const {
+        currentPage,
+        totalPages,
+        setNextPage,
+        setPreviousPage,
+        nextEnabled,
+        previousEnabled,
+        startIndex,
+        endIndex,
+    } = usePagination({
+        totalItems: data.length,
+        initialPageSize: 11,
+        startIndex: 0,
+        endIndex: 11,
+    });
+
+    useEffect(() => {
+        /* use api / wait until data is updated
+        async () => {
+            info = await getClassInfo();
+            setClassInfo(info);
+        } */
+
+        setClassInfo(data);
+    }, []);
+
     return (
-        <div className={`container`}>
+        <div className={`container ${style.container}`}>
             <h4 className={style.header}>Danh sách lớp đang tìm Gia sư</h4>
+            <button className={style.pagi} onClick={setPreviousPage} disabled={!previousEnabled}>
+                {`<`}
+            </button>
+            <span>
+                Trang hiện tại: {currentPage + 1} / {totalPages}
+            </span>
+            <button className={style.pagi} onClick={setNextPage} disabled={!nextEnabled}>
+                {`>`}
+            </button>
             <Table className={`table table-borderless ${style.table}`}>
                 <thead className={style.theader}>
                     <tr>
@@ -95,7 +120,7 @@ const ClassList = () => {
                 </thead>
                 <tbody>
                     {
-                        classInfo.map(
+                        classInfo.slice(startIndex, endIndex).map(
                             (c, index) => <Row key={index} data={classInfo[index]} c={c} />
                         )
                     }
