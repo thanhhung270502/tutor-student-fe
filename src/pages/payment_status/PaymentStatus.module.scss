@@ -72,3 +72,21 @@
 .column:hover {
     cursor: pointer;
 }
+
+.option {
+    width: 1rem;
+    position: relative;
+    background: none;
+    border: none;
+    margin: 0 0.3rem;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.c {
+    position: absolute;
+    background-color: #000;
+    height: 100px;
+    width: 100px;
+}

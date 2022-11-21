@@ -21,29 +21,65 @@ const UserAccounts = () => {
             info = await getClassInfo();
             setClassInfo(info);
         } */
-
+        setCurrentClassInfo(data);
         setClassInfo(data);
+        setRole(data);
+        setClassClassInfo(data);
     }, []);
+
     const [c, setC] = useState(0);
     const [order, setOrder] = useState("ASC");
     const sorting = (col) => {
         if(order == "ASC") {
-            const sorted = [...classInfo].sort((a, b) => 
+            const sorted = [...currentClassInfo].sort((a, b) => 
                 a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
             );
-            setClassInfo(sorted);
+            setCurrentClassInfo(sorted);
             setOrder("DSC");
             setC(col);
         }
         if(order == "DSC") {
-            const sorted = [...classInfo].sort((a, b) => 
+            const sorted = [...currentClassInfo].sort((a, b) => 
                 a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
             );
-            setClassInfo(sorted);
+            setCurrentClassInfo(sorted);
             setOrder("ASC");
             setC(0);
         }
     }
+
+    const [subjectClassInfo, setRole] = useState([]);
+    const [classClassInfo, setClassClassInfo] = useState([]);
+    const [currentClassInfo, setCurrentClassInfo] = useState([]);
+    // 0: default, 1: filter subject, 2: filter class, 3: filter both
+    const [number, setNumber] = useState(0);
+
+    const [grade, setGrade] = useState('all');
+    const [subject, setSubject] = useState('all');
+
+    const handleFilteredSubject = (e) => {
+        console.log(number);
+        const selected = e.target.value;
+        // const res = selected === "all" ? data : currentClassInfo.filter((c) => c.subject === selected);
+        let res = classInfo;
+        if (number === 0 || number === 1) {
+            res =
+                selected === 'all'
+                    ? data
+                    : selected === 'Khác'
+                    ? data.filter(
+                          (c) =>
+                              c.subject !== 'Gia Sư' &&
+                              c.subject !== 'Quản lí chuyên môn' &&
+                              c.subject !== 'Phụ huynh / Học sinh',
+                      )
+                    : data.filter((c) => c.role === selected);
+            setNumber(1);
+            setRole(res);
+        }
+        setCurrentClassInfo(res);
+        // setSubject(selected);
+    };
 
     return (
         <div className={cx('container')}>
@@ -61,20 +97,30 @@ const UserAccounts = () => {
                                 {c == "accountCreatedate" ? '▲' : '▼'}
                             </span>
                         </th>
-                        <th className={`col-md-1 ${clsx(style.th, style.center)}`} onClick={()=>sorting("role")}>QUYỀN
+                        <th className={`col-md-1 ${clsx(style.th, style.center)}`} >QUYỀN
                             <span className={`col-md-2 ${clsx(style.column)}`}>
-                                {c == "role" ? '▲' : '▼'}
+                                <select
+                                        id="role"
+                                        className={style.option}
+                                        onChange={(e) => {
+                                        handleFilteredSubject(e);}}
+                                        >
+                                    <option value="all">TẤT CẢ</option>
+                                    <option value="Gia Sư">GIA SƯ</option>
+                                    <option value="Quản lí chuyên môn">QUẢN LÍ</option>
+                                    <option value="Phụ huynh / Học sinh">HỌC VIÊN</option>
+                                </select>
                             </span>
                         </th>
                         <th className={`col-md-2 ${clsx(style.th, style.center)}`}></th>
-                        {/*<th className={`col-md-2 ${style.th}`}></th>*/}
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className={style.column}>
                     {
-                        classInfo.map(
-                            (c, index) => <Row key={index} data={classInfo[index]} c={c} />
-                        )
+                        currentClassInfo.map(
+                            (c, index) => (
+                                <Row key={index} data={currentClassInfo[index]} c={c} />
+                        ))
                     }
                 </tbody>
             </Table>

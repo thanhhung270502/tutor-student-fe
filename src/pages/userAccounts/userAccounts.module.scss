@@ -82,3 +82,14 @@
 .column:hover {
     cursor: pointer;
 }
+
+.option {
+    width: 1rem;
+    position: relative;
+    background: none;
+    border: none;
+    margin: 0 0.3rem;
+    &:hover {
+        cursor: pointer;
+    }
+}
