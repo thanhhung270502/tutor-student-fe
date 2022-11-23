@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import style from './Home.module.css'
+
 
 const HomePage1 = () => {
     useEffect(() => {
