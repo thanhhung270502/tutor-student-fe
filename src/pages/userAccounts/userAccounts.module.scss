@@ -1,6 +1,18 @@
 .container {
-    
+    // max-width: 1250px;
+    margin: auto;
+    width: 85%;
+    // height: 600px;
+    // overflow: hidden;
+    position: relative;
+    // overflow: scroll;
+    // border-radius: 20px;
+    // margin-bottom: 10px;
+    // thead {
+    //     position: sticky; top: 0; z-index: 1;
+    // }
 }
+
 .wrapper {
     max-height: 600px;
     overflow: hidden;
@@ -12,9 +24,14 @@
         position: sticky; top: 0; z-index: 1;
     }
 }
+
 .wrapper::-webkit-scrollbar {
     display: none;
 }
+
+// .container::-webkit-scrollbar {
+//     display: none;
+// }
 
 .header {
     font-weight: 700;

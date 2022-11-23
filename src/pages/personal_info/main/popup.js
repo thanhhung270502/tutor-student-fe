@@ -9,7 +9,7 @@ function Popup(props) {
         <div className={cx('popup')}>
             <div className={cx('popupInner')}>
                 {/* {props.children} */}
-                <div className={cx('text')}>XÁC NHẬN THAY ĐỔI</div>
+                <div className={cx('text')}>XÁC NHẬN THAY ĐỔI?</div>
                 <button 
                     className={cx('accept')}
                     onClick={() => props.setTrigger(false)}>

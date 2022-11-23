@@ -58,7 +58,7 @@ const PaymentStatus = () => {
     const [subject, setSubject] = useState('all');
 
     const handleFilteredSubject = (e) => {
-        console.log(number);
+        // console.log(number);
         const selected = e.target.value;
         // const res = selected === "all" ? data : currentClassInfo.filter((c) => c.subject === selected);
         let res = classInfo;
@@ -117,7 +117,7 @@ const PaymentStatus = () => {
     };
 
     const handleFilteredGrade = (e) => {
-        console.log(number);
+        // console.log(number);
         const selected = e.target.value;
         let res = data;
         if (number === 0 || number === 2) {

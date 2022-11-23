@@ -95,7 +95,7 @@ function Table() {
                                         {text[4]}<br/>
                                         {text[5]}<br/>
                                         {text[6]}<br/>
-                                        <nav className={cx('changeClassInfo')}><a href="/PaymentStatus">Sửa</a></nav>
+                                        <nav className={cx('changeClassInfo')}><a href="/create_class">Sửa</a></nav>
                                     </td>
                                 </tr>)}
                             </React.Fragment>
