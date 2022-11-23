@@ -88,14 +88,14 @@ const UserAccounts = () => {
                 <aside className={cx('wrapper')}>
                     <thead className={style.theader}>
                         <tr>
-                            <th className={`col-md-2 ${clsx(style.th, style.center)}`} onClick={()=>sorting("name")}>HỌ TÊN
+                            <th className={`col-md-2 ${clsx(style.th, style.center)}`} /*onClick={()=>sorting("name")}*/>HỌ TÊN
                                 <span className={`col-md-2 ${clsx(style.column)}`}>
-                                    {c === "name" ? '▲' : '▼'}
+                                    {/* {c === "name" ? '▲' : '▼'} */}
                                 </span>
                             </th>
-                            <th className={`col-md-3 ${clsx(style.th, style.center)}`} onClick={()=>sorting("accountCreatedate")}>NGÀY ĐĂNG KÝ
+                            <th className={`col-md-3 ${clsx(style.th, style.center)}`} /*onClick={()=>sorting("accountCreatedate")}*/>NGÀY ĐĂNG KÝ
                                 <span className={`col-md-2 ${clsx(style.column)}`}>
-                                    {c === "accountCreatedate" ? '▲' : '▼'}
+                                    {/* {c === "accountCreatedate" ? '▲' : '▼'} */}
                                 </span>
                             </th>
                             <th className={`col-md-1 ${clsx(style.th, style.center)}`} >QUYỀN

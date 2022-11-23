@@ -142,9 +142,9 @@ const PaymentStatus = () => {
                 <div className={cx('wrapper')}>
                     <thead className={style.theader}>
                         <tr>
-                            <th className={`col-md-2 ${clsx(style.th, style.center)}`} onClick={()=>sorting("classID")}>MÃ LỚP
+                            <th className={`col-md-2 ${clsx(style.th, style.center)}`} /*onClick={()=>sorting("classID")}*/>MÃ LỚP
                                 <span className={`col-md-2 ${clsx(style.column)}`}>
-                                    {c === "classID" ? '▲' : '▼'}
+                                    {/* {c === "classID" ? '▲' : '▼'} */}
                                 </span>
                             </th>
                             <th className={`col-md-2 ${clsx(style.th, style.center, style.subject)}`} >MÔN
@@ -188,9 +188,9 @@ const PaymentStatus = () => {
                                     <option className={style.options} value="ĐH">ĐH</option>
                                 </select>
                             </th>
-                            <th className={`col-md-3 ${clsx(style.th, style.center)}`} onClick={()=>sorting("date")}>NGÀY ĐĂNG KÝ
+                            <th className={`col-md-3 ${clsx(style.th, style.center)}`} /*onClick={()=>sorting("date")}*/>NGÀY ĐĂNG KÝ
                                 <span className={`col-md-2 ${clsx(style.column)}`}>
-                                    {c === "date" ? '▲' : '▼'}
+                                    {/* {c === "date" ? '▲' : '▼'} */}
                                 </span>
                             </th>
                             <th className={`col-md-2 ${clsx(style.th, style.center)}`} >TÌNH TRẠNG THANH TOÁN</th>
