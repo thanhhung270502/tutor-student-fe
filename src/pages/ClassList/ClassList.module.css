@@ -1,3 +1,7 @@
+.container {
+    min-height: 50rem;
+}
+
 .header {
     font-weight: 700;
     margin-top: 2rem;
@@ -45,6 +49,22 @@
     text-align: center;
 }
 
+.pagi {
+    background-color: #ff97a5;
+    color:#090526;
+    padding: 0 0.5rem;
+    border: none;
+    border-radius: 1rem;
+    margin: 0 1rem;
+}
+
+.pagi:hover {
+    background-color: #cb7e88;
+    color: #fff;
+    transition: .5s;
+}
+
+
 
 /* *******ROW******* */
 
@@ -56,4 +76,11 @@
 
 .icon {
     margin-right: 0.3rem;
+}
+
+.option {
+    width: 1rem;
+    background: none;
+    border: none;
+    margin: 0 0.3rem;
 }

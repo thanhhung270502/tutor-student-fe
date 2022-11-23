@@ -1,5 +1,5 @@
 :root {
-    --pink:rgba(255, 114, 125, 0.65);
+    --pink: rgba(255, 114, 125, 0.65);
     --success: #C0FAC7;
     --success-hover: #6FFA80;
     --success-active: #19c52d;
@@ -23,8 +23,8 @@
     --bs-btn-hover-bg: var(--success-hover);
     --bs-btn-hover-border-color: none;
     --bs-btn-color: var(--black);
-    --bs-btn-hover-color: var(--black);  
-    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-hover-color: var(--black);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: var(--black);
     --bs-btn-active-bg: var(--success-active);
     --bs-btn-active-border-color: none;
@@ -38,8 +38,8 @@
     --bs-btn-hover-bg: var(--warning-hover);
     --bs-btn-hover-border-color: none;
     --bs-btn-color: var(--black);
-    --bs-btn-hover-color: var(--black); 
-    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-hover-color: var(--black);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: var(--black);
     --bs-btn-active-bg: var(--warning-active);
     --bs-btn-active-border-color: none;
@@ -53,8 +53,8 @@
     --bs-btn-hover-bg: var(--banned-hover);
     --bs-btn-hover-border-color: none;
     --bs-btn-color: var(--black);
-    --bs-btn-hover-color: var(--black); 
-    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-hover-color: var(--black);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: var(--black);
     --bs-btn-active-bg: var(--banned-active);
     --bs-btn-active-border-color: none;
@@ -67,9 +67,10 @@
     background-color: var(--pink);
     line-height: 40px;
     border-radius: 20px;
-} 
+}
 
-#TH td, th {
+#TH td,
+#TH th {
     text-align: center;
     vertical-align: middle;
 }
@@ -81,4 +82,3 @@
 #TH th:nth-of-type(1) {
     border-radius: 20px 0 0 0;
 }
-

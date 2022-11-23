@@ -12,6 +12,8 @@ import Personal_info from './pages/personal_info/index.js';
 import ListTutor from './pages/ListTutor/index.js';
 import PendingClass from './pages/PendingClass/PendingClass';
 
+import AboutUs from './pages/AboutUs/AboutUs'
+
 function App() {
     return (
         <Layout>
@@ -25,6 +27,8 @@ function App() {
                 <Route path="/tutorlist" element={<ListTutor />} />
 
                 <Route path="/pendingClass" element={<PendingClass />} />
+
+                <Route path="/aboutus" element={<AboutUs />} />
             </Routes>
         </Layout>
     );
