@@ -12,11 +12,6 @@
     --black: #090526;
 }
 
-.tutorList {
-    margin: auto;
-    width: 70%;
-}
-
 .success-btn {
     --bs-btn-bg: var(--success);
     --bs-btn-border-color: none;
@@ -59,28 +54,6 @@
     --bs-btn-active-bg: var(--banned-active);
     --bs-btn-active-border-color: none;
     --bs-btn-border-radius: 20px;
-    width: 40%;
+    width: 30%;
     margin-left: 20px;
 }
-
-.custom-td, .custom.th {
-    text-align: center;
-    vertical-align: middle;
-}
-
-
-.custom-th:last-child{
-    border-radius: 0 20px 0 0;
-}
-
-.custom-th:first-child {
-    border-radius: 20px 0 0 0;
-}
-
-.custom-thead {
-    background-color: var(--pinka);
-    line-height: 40px;
-    border-radius: 20px;
-    text-align: center;
-    vertical-align: middle;
-} 

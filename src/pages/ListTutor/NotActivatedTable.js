@@ -6,6 +6,8 @@ import clsx from 'clsx';
 import style from './styles.module.scss';
 import { useState } from 'react';
 import data from './NotActivatedUser.json';
+import TableStyle from '../../components/GlobalStyles/table.module.scss'
+
 
 function RenderTutor(tutor) {
     const DetailStyle = {
@@ -28,10 +30,10 @@ function RenderTutor(tutor) {
     return (
         <>
             <tr key={tutor.ID} onClick={handleClickDetail}>
-                <td className={style['custom-td']}> {tutor.ID} </td>
-                <td className={style['custom-td']}> {tutor.name} </td>
-                <td className={style['custom-td']}> {tutor.registionDay} </td>
-                <td className={style['custom-td']}>
+                <td> {tutor.ID} </td>
+                <td> {tutor.firstname + " " + tutor.lastname} </td>
+                <td> {tutor.registionDay} </td>
+                <td>
                     <Button className={style['success-btn']}onClick={() => handleClickActivate(tutor.ID)}>Đồng ý</Button>
                     <Button className={style['warning-btn']}onClick={() => handleClickActivate(tutor.ID)}>Từ chối</Button>
                 </td>
@@ -77,15 +79,15 @@ export default function Render() {
         }
     }
     return (
-        <Table className='shadow rounded-4' striped hover>
-            <thead className={style['custom-thead']}>
+        <Table className={TableStyle.table}>
+            <thead>
                 <tr>
-                    <th className={style['custom-th']} onClick={() => sorting("ID")}>
+                    <th onClick={() => sorting("ID")}>
                         ID
                     </th>
-                    <th th className={style['custom-th']} onClick={() => sorting("name")}>Họ và tên</th>
-                    <th th className={style['custom-th']} onClick={() => sorting("registionDay")}>Ngày đăng kí</th>
-                    <th th className={style['custom-th']}></th>
+                    <th onClick={() => sorting("name")}>Họ và tên</th>
+                    <th onClick={() => sorting("registionDay")}>Ngày đăng kí</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
