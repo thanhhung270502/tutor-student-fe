@@ -8,6 +8,11 @@ import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Personal_info from './pages/personal_info/index.js';
 import ListTutor from './pages/ListTutor/index.js';
+<<<<<<< Updated upstream
+=======
+import PendingClass from './pages/PendingClass/PendingClass';
+import Payment from './pages/Payment/index.js';
+>>>>>>> Stashed changes
 
 function App() {
     return (
@@ -18,8 +23,16 @@ function App() {
                 <Route path="/classlist" element={<ClassList />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
+<<<<<<< Updated upstream
                 <Route path="/personal_info" element={<Personal_info />} />
                 <Route path="/tutorlist" element={<ListTutor />} />
+=======
+                <Route path="/createclass" element={<Createclass />} />
+                <Route path="/personalinfo" element={<Personal_info />} />
+                <Route path="/tutorlist" element={<ListTutor />} />
+                <Route path="/pendingClass" element={<PendingClass />} />
+                <Route path="/payment" element={<Payment />} />
+>>>>>>> Stashed changes
             </Routes>
         </Layout >
 

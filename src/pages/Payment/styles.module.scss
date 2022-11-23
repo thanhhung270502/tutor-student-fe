@@ -1,0 +1,57 @@
+:root {
+    --pinka:rgba(255, 114, 125, 0.65);
+    --success: #C0FAC7;
+    --success-hover: #6FFA80;
+    --success-active: #19c52d;
+    --warning: #F5BE70;
+    --warning-hover: #FD9F1A;
+    --warning-active: #c67d17;
+    --banned: rgba(255, 114, 125, 0.65);
+    --banned-hover: rgba(252, 78, 93, 0.65);
+    --banned-active: rgba(175, 9, 23, 0.65);
+    --black: #090526;
+}
+
+.payment {
+    margin: auto;
+    width: 70%;
+}
+
+.custom-col {
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.custom-h4 {
+    margin-top: 10%;
+}
+
+.custom-card {
+    padding: 20px;
+    margin:auto;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.custom-payment-button {
+    width: 16%;
+    margin: auto;
+    border-radius: 16px;
+    margin-top: 20px;
+    --bs-btn-bg: var(--success);
+    --bs-btn-border-color: none;
+    --bs-btn-hover-bg: var(--success-hover);
+    --bs-btn-hover-border-color: none;
+    --bs-btn-color: var(--black);
+    --bs-btn-hover-color: var(--black);  
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: var(--black);
+    --bs-btn-active-bg: var(--success-active);
+    --bs-btn-active-border-color: none;
+    --bs-btn-border-radius: 20px;
+}
+
+.img:hover {
+    width: 170px;
+}

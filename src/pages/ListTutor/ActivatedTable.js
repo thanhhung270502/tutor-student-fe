@@ -1,7 +1,8 @@
 import { Button } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
+import { usePagination } from 'react-table';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import myStyle from './styles.scss';
+import myStyle from './styles.module.scss';
 import { useState } from 'react';
 import data from './ActivatedUser.json';
 
@@ -28,11 +29,11 @@ function RenderTutor(tutor) {
     return (
         <>
             <tr key={tutor.ID} onClick={handleClickDetail}>
-                <td> {tutor.ID} </td>
-                <td> {tutor.name} </td>
-                <td> {tutor.registionDay} </td>
-                <td>
-                    <Button className='banned-btn' onClick={() => handleClickActivate(tutor.ID)}>Cấm</Button>
+                <td className={myStyle['custom-td']}> {tutor.ID} </td>
+                <td className={myStyle['custom-td']}> {tutor.name} </td>
+                <td className={myStyle['custom-td']}> {tutor.registionDay} </td>
+                <td className={myStyle['custom-td']}>
+                    <Button className={myStyle['banned-btn']} onClick={() => handleClickActivate(tutor.ID)}>Cấm</Button>
                 </td>
                     
             </tr>
@@ -77,14 +78,12 @@ export default function Render() {
     }
     return (
         <Table className='shadow rounded-4' striped hover>
-            <thead className='custom-thead'>
+            <thead className={myStyle['custom-thead']}>
                 <tr>
-                    <th onClick={() => sorting("ID")}>
-                        ID
-                    </th>
-                    <th onClick={() => sorting("name")}>Họ và tên</th>
-                    <th onClick={() => sorting("registionDay")}>Ngày đăng kí</th>
-                    <th></th>
+                    <th className={myStyle['custom-th']} onClick={() => sorting("ID")}>ID</th>
+                    <th className={myStyle['custom-th']} onClick={() => sorting("name")}>Họ và tên</th>
+                    <th className={myStyle['custom-th']}onClick={() => sorting("registionDay")}>Ngày đăng kí</th>
+                    <th className={myStyle['custom-th']}></th>
                 </tr>
             </thead>
             <tbody>

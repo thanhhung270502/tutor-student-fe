@@ -9,7 +9,7 @@ function Info () {
         <div className={cx('infoWrapper')}>
             <div className={cx('info')}>
                 <img src={image} /*style={{ width: "50%", height: "50%" }}*/ className={cx('image')}/>
-                <p className={cx('name')}>Tên</p>
+                <p className={cx('name')}>Nguyễn Văn A</p>
                 <p className={cx('role')}>Gia sư</p>
             </div>
         </div>

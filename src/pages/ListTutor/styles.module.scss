@@ -1,5 +1,5 @@
 :root {
-    --pink:rgba(255, 114, 125, 0.65);
+    --pinka:rgba(255, 114, 125, 0.65);
     --success: #C0FAC7;
     --success-hover: #6FFA80;
     --success-active: #19c52d;
@@ -14,7 +14,7 @@
 
 .tutorList {
     margin: auto;
-    width: 80%;
+    width: 70%;
 }
 
 .success-btn {
@@ -63,22 +63,23 @@
     margin-left: 20px;
 }
 
-.custom-thead {
-    background-color: var(--pink);
-    line-height: 40px;
-    border-radius: 20px;
-} 
-
-td, th {
+.custom-td, .custom.th {
     text-align: center;
     vertical-align: middle;
 }
 
-th:nth-of-type(4) {
+.custom-th:nth-of-type(4) {
     border-radius: 0 20px 0 0;
 }
 
-th:nth-of-type(1) {
+.custom-th:nth-of-type(1) {
     border-radius: 20px 0 0 0;
 }
 
+.custom-thead {
+    background-color: var(--pinka);
+    line-height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    vertical-align: middle;
+} 
