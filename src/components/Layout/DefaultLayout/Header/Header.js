@@ -34,7 +34,7 @@ const Guest = () => {
 
 const ProfessionalAdmin = () => {
     const proadmin = ['Trang chủ', 'Duyệt gia sư', 'Duyệt lớp'];
-    const link = ['/', 'verifyTutorAccount', 'verifyClass'];
+    const link = ['/', '/tutorlist', '/pendingclass'];
     return (
         <React.Fragment>
             {proadmin.map((v, index) => (
@@ -50,19 +50,19 @@ const ProfessionalAdmin = () => {
                 </Link>
                 <ul className={`dropdown-menu ${style.dropdownContent}`}>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/personal_info">
                             Thông tin cá nhân
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/confirmpayment">
                             Xác nhận thanh toán
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} >
                             Đăng xuất
-                        </Link>
+                        </button>
                     </li>
                 </ul>
             </li>
@@ -88,19 +88,19 @@ const SystemAdmin = () => {
                 </Link>
                 <ul className={`dropdown-menu ${style.dropdownContent}`}>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/personal_info">
                             Thông tin cá nhân
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/admin_thongke">
                             Thống kê
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`}>
                             Đăng xuất
-                        </Link>
+                        </button>
                     </li>
                 </ul>
             </li>
@@ -126,7 +126,7 @@ const Student = () => {
                 </Link>
                 <ul className={`dropdown-menu ${style.dropdownContent}`}>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/personal_info">
                             Thông tin cá nhân
                         </Link>
                     </li>
@@ -174,7 +174,6 @@ function Header() {
                     {
                         context.role === '4' &&  <Student />
                     }
-                
                 </ul>
             </div>
         </nav>

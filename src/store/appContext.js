@@ -15,7 +15,7 @@ role = 4: Nguoi tim GS
 const AppContextProvider = ({ children }) => {
 
     const contextValue = {
-        role: '0',
+        role: '1',
     }
 
     return (
