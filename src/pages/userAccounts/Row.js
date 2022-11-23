@@ -19,18 +19,18 @@ const ClassDetails = (props) => {
         <>
             <tr className={`${style.modal}`}>
                 <td colSpan="2" className={`${clsx(style.detail)}`}>
-                    <i className={`fa-regular fa-clock ${style.icon}`}></i>
+                    <i className={`fi fi-rr-calendar ${style.icon}`}></i>
                     Ngày sinh: {info.birth}
                 </td>
                 <td colSpan="2" className={`${clsx(style.detail)}`}>
-                    <i className={`fi fi-rr-globe ${style.icon}`}></i>
+                    <i className={`fi fi-rr-user ${style.icon}`}></i>
                     CMND/CCCD: {info.CCCD}
                 </td>
 
             </tr>
             <tr className={`${style.modal}`}>
                 <td colSpan="2" className={`${clsx(style.detail)}`}>
-                    <i className={`fi fi-rr-mail ${style.icon}`}></i>
+                    <i className={`fi fi-rr-envelope ${style.icon}`}></i>
                     Email: {info.email}
                 </td>
                 <td colSpan="2" className={`${clsx(style.detail)}`}>
