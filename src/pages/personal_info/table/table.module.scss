@@ -4,12 +4,15 @@
     flex-direction: column;
     align-content: center;
     margin-left: 20px;
-    max-height: 470px;
+    max-height: 500px;
     .title {
         text-align: center;
         font-size: 17px;
         font-weight: 700;
         padding-top: 10px;
+    }
+    .table::-webkit-scrollbar {
+        display: none;
     }
     .table {
         display: flex;
@@ -18,6 +21,8 @@
         overflow: hidden;
         margin-top: 20px;
         border-radius: 15px;
+        overflow: scroll;
+        position: sticky; top: 0; z-index: 1;
         
         tr:nth-child(even){background-color: #f9f9f9;}
         
@@ -32,6 +37,10 @@
                 //height: 40px;
             }
 
+            thead {
+                position: sticky; top: 0; z-index: 1;
+            }
+
             tbody {
                 tr {
                     height: 35px;
@@ -39,6 +48,10 @@
                     &:hover {
                         cursor: pointer;
                         background-color: #e1e1e1;
+                    }
+                    .changeClassInfo {
+                        text-align: right;
+                        padding-right: 20px;
                     }
                 }
             }
