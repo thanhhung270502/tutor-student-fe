@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import style from './Header.module.css';
 import Search from '../Search';
+import { AppContext } from '../../../../store/appContext';
 
 const Guest = () => {
     const guest = ['Tìm gia sư', 'Trở thành gia sư', 'About us'];
@@ -131,9 +132,7 @@ const Student = () => {
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
-                            Đăng xuất
-                        </Link>
+                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`}>Đăng xuất</button>
                     </li>
                 </ul>
             </li>
@@ -183,6 +182,8 @@ const Tutor = () => {
 };
 
 function Header() {
+    const context = useContext(AppContext);
+
     return (
         <nav id="mainNavbar" className={`navbar navbar-light navbar-expand-lg sticky-top ${clsx(style.navbar)}`}>
             <Link className={`navbar-brand ${style.logo}`} to="/">
@@ -202,7 +203,12 @@ function Header() {
                     {/* <SystemAdmin /> */}
                     {/* <ProfessionalAdmin /> */}
                     {/* <Student /> */}
-                    <Tutor />
+                    {/* <Tutor /> */}
+                    {context.role === '0' && <Guest />}
+                    {context.role === '1' && <SystemAdmin />}
+                    {context.role === '2' && <ProfessionalAdmin />}
+                    {context.role === '3' && <Tutor />}
+                    {context.role === '4' && <Student />}
                 </ul>
             </div>
         </nav>

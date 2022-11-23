@@ -17,10 +17,6 @@ const ClassList = () => {
     // 0: default, 1: filter subject, 2: filter class, 3: filter both
     const [number, setNumber] = useState(0);
 
-    const [show, setShow] = useState(false);
-    const [grade, setGrade] = useState('all');
-    const [subject, setSubject] = useState('all');
-
     const handleFilteredSubject = (e) => {
         console.log(number);
         const selected = e.target.value;

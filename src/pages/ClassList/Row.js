@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
 import style from './ClassList.module.css'
+import { AppContext } from '~/store/appContext'
 
 const ClassDetails = (props) => {
     const [info, setInfo] = useState(props.info)
@@ -60,9 +61,12 @@ const Row = (props) => {
     const [classData, setClassData] = useState(props.data)
     const [show, setShow] = useState(false)
     const c = props.c
+    const context = useContext(AppContext);
 
     const toggleShow = () => {
-        setShow(!show);
+        (context.role === '1' ||
+            context.role === '2' ||
+            context.role === '3') ? setShow(!show) : setShow(false);
     }
 
     return (
