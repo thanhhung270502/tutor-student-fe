@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
-import style from './ClassList.module.css'
+import style from '../../components/GlobalStyles/table.module.scss'
 
 const ClassDetails = (props) => {
     const [info, setInfo] = useState(props.info)
@@ -67,11 +67,11 @@ const Row = (props) => {
 
     return (
         <>
-            <tr className={style.tr} onClick={toggleShow}>
-                <td className={`col-md-3 ${clsx(style.td)}`}>{c.classID}</td>
-                <td className={`col-md-3 ${clsx(style.td)}`}>{c.subject}</td>
-                <td className={`col-md-3 ${clsx(style.td, style.center)}`}>{c.grade}</td>
-                <td className={`col-md-3 ${clsx(style.td)}`}>{c.date}</td>
+            <tr onClick={toggleShow}>
+                <td>{c.classID}</td>
+                <td>{c.subject}</td>
+                <td>{c.grade}</td>
+                <td>{c.date}</td>
 
             </tr>
             {show && <ClassDetails info={classData} />}

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
-import style from './ClassList.module.css'
+import style from '../../components/GlobalStyles/table.module.scss'
 import { Table } from 'react-bootstrap'
 import data from './ClassList.json'
 
@@ -26,14 +26,14 @@ const ClassList = () => {
     return (
         <div className={`container`}>
             <h4 className={style.header}>Danh sách lớp đang tìm Gia sư</h4>
-            <Table className={`table table-borderless ${style.table}`}>
-                <thead className={style.theader}>
+            <Table className={`${clsx(style.table)}`}>
+                <thead>
                     <tr>
-                        <th className={`col-md-3 ${style.th}`}>MÃ LỚP</th>
-                        <th className={`col-md-3 ${style.th}`}>MÔN</th>
-                        <th className={`col-md-3 ${clsx(style.th, style.center)}`}>LỚP</th>
-                        <th className={`col-md-3 ${style.th}`}>NGÀY ĐĂNG KÝ</th>
-                        {/* <th className={`col-md-3 ${style.th}`}></th> */}
+                        <th>MÃ LỚP</th>
+                        <th>MÔN</th>
+                        <th>LỚP</th>
+                        <th>NGÀY ĐĂNG KÝ</th>
+                        {/* <th></th> */}
                     </tr>
                 </thead>
                 <tbody>
