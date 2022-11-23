@@ -85,44 +85,47 @@ const UserAccounts = () => {
         <div className={cx('container')}>
             <h4 className={style.header}>Danh sách tài khoản người dùng</h4>
             <Table className={`table table-borderless ${style.table}`}>
-                <thead className={style.theader}>
-                    <tr>
-                        <th className={`col-md-2 ${clsx(style.th, style.center)}`} onClick={()=>sorting("name")}>HỌ TÊN
-                            <span className={`col-md-2 ${clsx(style.column)}`}>
-                                {c == "name" ? '▲' : '▼'}
-                            </span>
-                        </th>
-                        <th className={`col-md-3 ${clsx(style.th, style.center)}`} onClick={()=>sorting("accountCreatedate")}>NGÀY ĐĂNG KÝ
-                            <span className={`col-md-2 ${clsx(style.column)}`}>
-                                {c == "accountCreatedate" ? '▲' : '▼'}
-                            </span>
-                        </th>
-                        <th className={`col-md-1 ${clsx(style.th, style.center)}`} >QUYỀN
-                            <span className={`col-md-2 ${clsx(style.column)}`}>
-                                <select
-                                        id="role"
-                                        className={style.option}
-                                        onChange={(e) => {
-                                        handleFilteredSubject(e);}}
-                                        >
-                                    <option value="all">TẤT CẢ</option>
-                                    <option value="Gia Sư">GIA SƯ</option>
-                                    <option value="Quản lí chuyên môn">QUẢN LÍ</option>
-                                    <option value="Phụ huynh / Học sinh">HỌC VIÊN</option>
-                                </select>
-                            </span>
-                        </th>
-                        <th className={`col-md-2 ${clsx(style.th, style.center)}`}></th>
-                    </tr>
-                </thead>
-                <tbody className={style.column}>
-                    {
-                        currentClassInfo.map(
-                            (c, index) => (
-                                <Row key={index} data={currentClassInfo[index]} c={c} />
-                        ))
-                    }
-                </tbody>
+                {/* <div className={cx('wrapper')}> */}
+                    <thead className={style.theader}>
+                        <tr>
+                            <th className={`col-md-2 ${clsx(style.th, style.center)}`} onClick={()=>sorting("name")}>HỌ TÊN
+                                <span className={`col-md-2 ${clsx(style.column)}`}>
+                                    {c == "name" ? '▲' : '▼'}
+                                </span>
+                            </th>
+                            <th className={`col-md-3 ${clsx(style.th, style.center)}`} onClick={()=>sorting("accountCreatedate")}>NGÀY ĐĂNG KÝ
+                                <span className={`col-md-2 ${clsx(style.column)}`}>
+                                    {c == "accountCreatedate" ? '▲' : '▼'}
+                                </span>
+                            </th>
+                            <th className={`col-md-1 ${clsx(style.th, style.center)}`} >QUYỀN
+                                <span className={`col-md-2 ${clsx(style.column)}`}>
+                                    <select
+                                            id="role"
+                                            className={style.option}
+                                            onChange={(e) => {
+                                            handleFilteredSubject(e);}}
+                                            >
+                                        <option value="all">TẤT CẢ</option>
+                                        <option value="Gia Sư">GIA SƯ</option>
+                                        <option value="Quản lí chuyên môn">QUẢN LÍ</option>
+                                        <option value="Phụ huynh / Học sinh">HỌC VIÊN</option>
+                                    </select>
+                                </span>
+                            </th>
+                            <th className={`col-md-2 ${clsx(style.th, style.center)}`}>QUẢN LÝ TÀI KHOẢN</th>
+                            {}
+                        </tr>
+                    </thead>
+                    <tbody className={style.column}>
+                        {
+                            currentClassInfo.map(
+                                (c, index) => (
+                                    <Row key={index} data={currentClassInfo[index]} c={c} />
+                            ))
+                        }
+                    </tbody>
+                {/* </div> */}
             </Table>
         </div>
     );

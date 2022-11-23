@@ -139,71 +139,73 @@ const PaymentStatus = () => {
         <div className={cx('container')}>
             <h4 className={style.header}>Tình trạng thanh toán lớp</h4>
             <Table className={`table table-borderless ${style.table}`}>
-                <thead className={style.theader}>
-                    <tr>
-                        <th className={`col-md-2 ${clsx(style.th, style.center)}`} onClick={()=>sorting("classID")}>MÃ LỚP
-                            <span className={`col-md-2 ${clsx(style.column)}`}>
-                                {c === "classID" ? '▲' : '▼'}
-                            </span>
-                        </th>
-                        <th className={`col-md-2 ${clsx(style.th, style.center, style.subject)}`} >MÔN
-                            <select
-                                    id="subject"
+                <div className={cx('wrapper')}>
+                    <thead className={style.theader}>
+                        <tr>
+                            <th className={`col-md-2 ${clsx(style.th, style.center)}`} onClick={()=>sorting("classID")}>MÃ LỚP
+                                <span className={`col-md-2 ${clsx(style.column)}`}>
+                                    {c === "classID" ? '▲' : '▼'}
+                                </span>
+                            </th>
+                            <th className={`col-md-2 ${clsx(style.th, style.center, style.subject)}`} >MÔN
+                                <select
+                                        id="subject"
+                                        className={style.option}
+                                        onChange={(e) => {
+                                        handleFilteredSubject(e);}}
+                                        >
+                                    <option className={style.options} value="all">TẤT CẢ</option>
+                                    <option className={style.options} value="Toán">TOÁN</option>
+                                    <option className={style.options} value="Vật lý">VẬT LÝ</option>
+                                    <option className={style.options} value="Hóa học">HOÁ HỌC</option>
+                                    <option className={style.options} value="Anh văn">ANH VĂN</option>
+                                    <option className={style.options} value="Sinh học">SINH HỌC</option>
+                                    <option className={style.options} value="Ngữ Văn">NGỮ VĂN</option>
+                                    <option className={style.options} value="Khác">KHÁC</option>
+                                </select>
+                                <span class='c'></span>
+                            </th>
+                            <th className={`col-md-1 ${clsx(style.th, style.center)}`} >LỚP
+                                <select
+                                    id="class"
                                     className={style.option}
                                     onChange={(e) => {
-                                    handleFilteredSubject(e);}}
-                                    >
-                                <option className={style.options} value="all">TẤT CẢ</option>
-                                <option className={style.options} value="Toán">TOÁN</option>
-                                <option className={style.options} value="Vật lý">VẬT LÝ</option>
-                                <option className={style.options} value="Hóa học">HOÁ HỌC</option>
-                                <option className={style.options} value="Anh văn">ANH VĂN</option>
-                                <option className={style.options} value="Sinh học">SINH HỌC</option>
-                                <option className={style.options} value="Ngữ Văn">NGỮ VĂN</option>
-                                <option className={style.options} value="Khác">KHÁC</option>
-                            </select>
-                            <span class='c'></span>
-                        </th>
-                        <th className={`col-md-1 ${clsx(style.th, style.center)}`} >LỚP
-                            <select
-                                id="class"
-                                className={style.option}
-                                onChange={(e) => {
-                                    handleFilteredGrade(e);
-                                }}>
-                                <option className={style.options} value="all">TẤT CẢ</option>
-                                <option className={style.options} value="1">1</option>
-                                <option className={style.options} value="2">2</option>
-                                <option className={style.options} value="3">3</option>
-                                <option className={style.options} value="4">4</option>
-                                <option className={style.options} value="5">5</option>
-                                <option className={style.options} value="6">6</option>
-                                <option className={style.options} value="7">7</option>
-                                <option className={style.options} value="8">8</option>
-                                <option className={style.options} value="9">9</option>
-                                <option className={style.options} value="10">10</option>
-                                <option className={style.options} value="11">11</option>
-                                <option className={style.options} value="12">12</option>
-                                <option className={style.options} value="ĐH">ĐH</option>
-                            </select>
-                        </th>
-                        <th className={`col-md-3 ${clsx(style.th, style.center)}`} onClick={()=>sorting("date")}>NGÀY ĐĂNG KÝ
-                            <span className={`col-md-2 ${clsx(style.column)}`}>
-                                {c === "date" ? '▲' : '▼'}
-                            </span>
-                        </th>
-                        <th className={`col-md-2 ${clsx(style.th, style.center)}`} >TÌNH TRẠNG THANH TOÁN</th>
-                        {/*<th className={`col-md-2 ${style.th}`}></th>*/}
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        currentClassInfo.map(
-                            (c, index) => (
-                                <Row key={index} data={currentClassInfo[index]} c={c} />
-                        ))
-                    }
-                </tbody>
+                                        handleFilteredGrade(e);
+                                    }}>
+                                    <option className={style.options} value="all">TẤT CẢ</option>
+                                    <option className={style.options} value="1">1</option>
+                                    <option className={style.options} value="2">2</option>
+                                    <option className={style.options} value="3">3</option>
+                                    <option className={style.options} value="4">4</option>
+                                    <option className={style.options} value="5">5</option>
+                                    <option className={style.options} value="6">6</option>
+                                    <option className={style.options} value="7">7</option>
+                                    <option className={style.options} value="8">8</option>
+                                    <option className={style.options} value="9">9</option>
+                                    <option className={style.options} value="10">10</option>
+                                    <option className={style.options} value="11">11</option>
+                                    <option className={style.options} value="12">12</option>
+                                    <option className={style.options} value="ĐH">ĐH</option>
+                                </select>
+                            </th>
+                            <th className={`col-md-3 ${clsx(style.th, style.center)}`} onClick={()=>sorting("date")}>NGÀY ĐĂNG KÝ
+                                <span className={`col-md-2 ${clsx(style.column)}`}>
+                                    {c === "date" ? '▲' : '▼'}
+                                </span>
+                            </th>
+                            <th className={`col-md-2 ${clsx(style.th, style.center)}`} >TÌNH TRẠNG THANH TOÁN</th>
+                            {/*<th className={`col-md-2 ${style.th}`}></th>*/}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            currentClassInfo.map(
+                                (c, index) => (
+                                    <Row key={index} data={currentClassInfo[index]} c={c} />
+                            ))
+                        }
+                    </tbody>
+                </div>
             </Table>
         </div>
     );

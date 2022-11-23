@@ -1,3 +1,17 @@
+.wrapper {
+    max-height: 600px;
+    overflow: hidden;
+    position: relative;
+    overflow: scroll;
+    border-radius: 20px;
+    thead {
+        position: sticky; top: 0; z-index: 1;
+    }
+}
+.wrapper::-webkit-scrollbar {
+    display: none;
+}
+
 .header {
     font-weight: 700;
     margin-top: 2rem;
@@ -13,6 +27,7 @@
 
 .theader {
     background-color: #ff97a5;
+    position: sticky;
 }
 
 .th {
