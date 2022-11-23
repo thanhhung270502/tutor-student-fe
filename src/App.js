@@ -43,25 +43,26 @@ function App() {
                 /*************  only system admin *************/
                 {context.role === '1' &&
                     <>
-                        <Route path="/pendingClass" element={<PendingClass />} />
+
                     </>
                 }
                 /*************  only professional admin *************/
                 {context.role === '2' &&
                     <>
                         <Route path="/tutorlist" element={<ListTutor />} />
+                        <Route path="/pendingclass" element={<PendingClass />} />
                     </>
                 }
                 /*************  only tutor *************/
                 {context.role === '3' &&
                     <>
-                        
+
                     </>
                 }
                 /*************  only student *************/
                 {context.role === '4' &&
                     <>
-                         <Route path="/createclass" element={<Createclass />} />
+                        <Route path="/createclass" element={<Createclass />} />
                     </>
                 }
             </Routes>
