@@ -189,7 +189,7 @@ function Header() {
             <Link className={`navbar-brand ${style.logo}`} to="/">
                 <img src=".././logo.png" height="50"></img>
             </Link>
-            <button
+            <button 
                 className={`navbar-toggler ${style.togglerBut}`}
                 data-bs-toggle="collapse"
                 data-bs-target="#navLinks"
