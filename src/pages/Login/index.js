@@ -52,7 +52,7 @@ function Login() {
                                     </a>
                                 </div>
                                 <div className={cx('text-center pt-2 pb-2')}>
-                                    <a className={cx('btn-gray')} href="#">
+                                    <a className={cx('btn-gray')} href="/">
                                         Quay lại
                                     </a>
                                 </div>
