@@ -5,6 +5,7 @@ import Table from "./table/table";
 import styles from "./personal_info.module.scss";
 import { useState } from "react";
 import button from "./sidebar/button";
+import image from '~/image/backG.png'
 //import Button, { buttonID } from "./sidebar/button";
 
 const cx = className.bind(styles);
