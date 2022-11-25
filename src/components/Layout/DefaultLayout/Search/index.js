@@ -14,12 +14,6 @@ function Search() {
 
     const inputRef = useRef();
 
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1, 1, 1, 1]);
-        }, 3000);
-    }, []);
-
     const handleClear = () => {
         setSearchValue('');
         setSearchResult([]);
@@ -55,7 +49,10 @@ function Search() {
                     className="border-end"
                     placeholder="Search..."
                     spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={(e) => {
+                        setSearchValue(e.target.value);
+                        setSearchResult([1, 1, 1, 1]);
+                    }}
                     onFocus={() => setShowResult(true)}
                 />
                 {!!searchValue && (
