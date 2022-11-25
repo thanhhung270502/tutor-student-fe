@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import React from 'react';
+import React, { useContext } from 'react';
 import Layout from '~/components/Layout/DefaultLayout/Layout';
 
 import Home from './pages/Home/Home.js';
@@ -14,21 +14,57 @@ import PendingClass from './pages/PendingClass/PendingClass';
 
 import AboutUs from './pages/AboutUs/AboutUs'
 
+// IMPORT CONTEXT
+import { AppContext } from './store/appContext';
+
 function App() {
+    const context = useContext(AppContext);
     return (
         <Layout>
             <Routes>
+                /*************  all user *************/
                 <Route path="/" element={<Home />} />
-                <Route path="/classlist" element={<ClassList />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/create_class" element={<Createclass />} />
-                <Route path="/personal_info" element={<Personal_info />} />
-                <Route path="/tutorlist" element={<ListTutor />} />
-
-                <Route path="/pendingClass" element={<PendingClass />} />
-
                 <Route path="/aboutus" element={<AboutUs />} />
+                <Route path="/classlist" element={<ClassList />} />
+
+                /*************  only REGISTERED USER *************/
+                {(context.role !== '0') &&
+                    <>
+                        <Route path="/personal_info" element={<Personal_info />} />
+                    </>
+                }
+                /*************  only guest *************/
+                {context.role === '0' &&
+                    <>
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/signup" element={<SignUp />} />
+                    </>
+                }
+                /*************  only system admin *************/
+                {context.role === '1' &&
+                    <>
+
+                    </>
+                }
+                /*************  only professional admin *************/
+                {context.role === '2' &&
+                    <>
+                        <Route path="/tutorlist" element={<ListTutor />} />
+                        <Route path="/pendingclass" element={<PendingClass />} />
+                    </>
+                }
+                /*************  only tutor *************/
+                {context.role === '3' &&
+                    <>
+
+                    </>
+                }
+                /*************  only student *************/
+                {context.role === '4' &&
+                    <>
+                        <Route path="/createclass" element={<Createclass />} />
+                    </>
+                }
             </Routes>
         </Layout>
     );
