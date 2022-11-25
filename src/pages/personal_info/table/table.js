@@ -74,7 +74,7 @@ function Table() {
                             </tr>
                         ))}
                     </thead>
-                    <tbody {...getTableBodyProps()}>
+                    <tbody className={cx('body')}{...getTableBodyProps()}>
                         {rows.map((row => (
                             prepareRow(row),
                             <React.Fragment key={row.id}>
@@ -95,6 +95,7 @@ function Table() {
                                         {text[4]}<br/>
                                         {text[5]}<br/>
                                         {text[6]}<br/>
+                                        <nav className={cx('changeClassInfo')}><a href="/create_class">Sửa</a></nav>
                                     </td>
                                 </tr>)}
                             </React.Fragment>

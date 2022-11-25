@@ -81,7 +81,6 @@ function Main () {
             <Popup 
                 trigger={openPopup}
                 setTrigger={setOpenPopup}>
-                    <h3 className={cx('message')} style={{paddingTop: '15px'}}>XÁC NHẬN THAY ĐỔI ?</h3>
             </Popup>
         </aside>
     )

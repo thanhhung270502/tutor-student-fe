@@ -6,18 +6,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fbf6f8;.container {
+    background-color: #fbf6f8;
+    background-image: url('/image/backG.png');
+    background-size: 1500px;
+    background-size: 100%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    // background-size: contain;
+    
+    .container {
     padding-left: 50px;
     padding-right: 25px;
     padding-top: 10px;
     padding-bottom: 30px;
     margin: auto;
-    width: 650px;
-    min-height: 520px;
+    width: 700px;
+    min-height: 580px;
     height: 100%;
     background-color: #fff;
     display: flex;
     border-radius: 44px;
+    box-shadow: 3px 2px 20px -3px rgba(0, 0, 0, 0.113);
     }
 
     .buttonWrapper {
