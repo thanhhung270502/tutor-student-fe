@@ -168,6 +168,11 @@ const Tutor = () => {
                     </li>
                     <li className={`nav-item`}>
                         <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                            Thanh toán
+                        </Link>
+                    </li>
+                    <li className={`nav-item`}>
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
                             Đăng xuất
                         </Link>
                     </li>

@@ -3,12 +3,12 @@
 }
 
 .navbar {
-    background-color: #FBF6F8;
+    background-color: #fbf6f8;
     padding: 0;
 }
 
 .navbar.scroll {
-    background-color: #7D73C1;
+    background-color: #7d73c1;
     color: white;
 }
 
@@ -21,7 +21,7 @@
     }
 
     .link:hover {
-        background-color: #D9D9D9;
+        background-color: #d9d9d9;
     }
 
     .login,
@@ -33,20 +33,20 @@
         width: 7rem;
         text-align: center;
         background-size: 300% 100%;
-        -o-transition: all .4s ease-in-out;
-        -webkit-transition: all .4s ease-in-out;
-        transition: all .4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
     }
 
     /* vertical padding + margin = 1.2rem */
 
     .login {
         margin-left: 1.2rem;
-        background-image: linear-gradient(to right, #3c3373, #090526, #3c3373, #7D73C1);
+        background-image: linear-gradient(to right, #3c3373, #090526, #3c3373, #7d73c1);
     }
 
     .signup {
-        background-image: linear-gradient(to right, #b3666d, #7D73C1, #b3666d, #FF727D);
+        background-image: linear-gradient(to right, #b3666d, #7d73c1, #b3666d, #ff727d);
         margin-right: 2.5rem;
     }
 
@@ -55,18 +55,18 @@
         /* background-color: #7D73C1; */
         color: white;
         background-position: 100% 0;
-        -o-transition: all .4s ease-in-out;
-        -webkit-transition: all .4s ease-in-out;
-        transition: all .4s ease-in-out;
+        -o-transition: all 0.4s ease-in-out;
+        -webkit-transition: all 0.4s ease-in-out;
+        transition: all 0.4s ease-in-out;
     }
 
     .dropdownBtn {
         color: #ffffff;
         -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0), inset 1px 0px 22px -4px rgba(0, 0, 0, 0.35);
         box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0), inset 1px 0px 22px -4px rgba(0, 0, 0, 0.35);
-        background: #7D73C1;
+        background: #7d73c1;
         border-radius: 2rem;
-        margin: 0.9rem 2rem 0 2rem;
+        margin: 0.9rem 0rem 0 0rem;
         padding: 0.3rem 0.8rem !important;
     }
 
@@ -76,7 +76,10 @@
         display: none;
         padding: 0;
         background-color: white;
-        margin: 0.3rem 1.6rem;
+        /* margin: 0.3rem 1.6rem; */
+        top: 80%;
+        right: 50%;
+        transform: translateX(50%);
         border-radius: 1rem;
     }
 
@@ -90,6 +93,10 @@
 
     .dropdownBtn:focus {
         color: white;
+    }
+
+    .dropdown {
+        padding: 0 2rem;
     }
 }
 
@@ -111,6 +118,6 @@
     font-size: 0.8rem; */
 }
 .dropdownItem:hover {
-    background-color:#D9D9D9;
+    background-color: #d9d9d9;
     border-radius: 1rem;
 }
