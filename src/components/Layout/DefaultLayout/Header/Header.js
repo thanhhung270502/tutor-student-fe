@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import style from './Header.module.css';
+import Search from '../Search';
 
 const Guest = () => {
     const guest = ['Tìm gia sư', 'Trở thành gia sư', 'About us'];
@@ -140,6 +141,42 @@ const Student = () => {
     );
 };
 
+const Tutor = () => {
+    const student = ['Trang chủ', 'Lớp học'];
+    const link = ['/', '/classlist'];
+    return (
+        <React.Fragment>
+            {/* Search */}
+            <Search />
+
+            {student.map((v, index) => (
+                <li key={index} className={`nav-item ${clsx(style.headerItem)}`}>
+                    <Link to={link[index]} className={`nav-link ${clsx(style.link)}`}>
+                        {v}
+                    </Link>
+                </li>
+            ))}
+            <li className={`nav-item dropdown ${style.dropdown}`}>
+                <Link className={`nav-link dropdown-toggle ${style.dropdownBtn}`} to="#">
+                    Học viên chăm chỉ
+                </Link>
+                <ul className={`dropdown-menu ${style.dropdownContent}`}>
+                    <li className={`nav-item`}>
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                            Thông tin cá nhân
+                        </Link>
+                    </li>
+                    <li className={`nav-item`}>
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                            Đăng xuất
+                        </Link>
+                    </li>
+                </ul>
+            </li>
+        </React.Fragment>
+    );
+};
+
 function Header() {
     return (
         <nav id="mainNavbar" className={`navbar navbar-light navbar-expand-lg sticky-top ${clsx(style.navbar)}`}>
@@ -156,10 +193,11 @@ function Header() {
             </button>
             <div className={`collapse navbar-collapse ${style.grbut}`} id="navLinks">
                 <ul className={`navbar-nav ms-auto`}>
-                    <Guest />
+                    {/* <Guest /> */}
                     {/* <SystemAdmin /> */}
                     {/* <ProfessionalAdmin /> */}
                     {/* <Student /> */}
+                    <Tutor />
                 </ul>
             </div>
         </nav>

@@ -1,0 +1,9 @@
+.class_item_field {
+    padding: 0.65rem 1rem;
+    color: #161823;
+
+    &:hover {
+        cursor: pointer;
+        background: rgba(22, 24, 35, 0.03);
+    }
+}
