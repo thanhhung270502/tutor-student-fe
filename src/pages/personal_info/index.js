@@ -3,8 +3,10 @@ import Sidebar, {bID} from "./sidebar";
 import Main from "./main";
 import Table from "./table/table";
 import styles from "./personal_info.module.scss";
-import { useState } from "react";
 import button from "./sidebar/button";
+import React, {useState, useEffect, useContext} from "react";
+import { AppContext } from 'src/store/appContext';
+import image from '~/image/backG.png'
 //import Button, { buttonID } from "./sidebar/button";
 
 const cx = className.bind(styles);
@@ -24,24 +26,33 @@ function Personal_info({children}) {
         setButtonID(1);
     };
 
+    const context = useContext(AppContext);
+
+    // const context = 1;
 
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
                 <Sidebar>
-                    <aside className={cx('buttonWrapper')}>
-                        <button 
-                            onClick={handleClickButton0}
-                            style={{ backgroundColor: buttonID ? "" : "#FF727D" }}
-                            className={cx('button')}>Thông tin</button>
-                        <button 
-                            onClick={handleClickButton1}
-                            style={{ backgroundColor: buttonID == 0 ? "" : "#FF727D" }}
-                            className={cx('button')}>Lớp đã tạo</button>
-                    </aside>
+                    {context.role != 1 && context.role != 2 ? 
+                        <aside className={cx('buttonWrapper')}>
+                                <button 
+                                    onClick={handleClickButton0}
+                                    style={{ backgroundColor: buttonID ? "" : "#FF727D" }}
+                                    className={cx('button')}>Thông tin</button>
+                                <button 
+                                    onClick={handleClickButton1}
+                                    style={{ backgroundColor: buttonID == 0 ? "" : "#FF727D" }}
+                                    className={cx('button')}>Lớp đã tạo</button>
+                        </aside> : " "}
                 </Sidebar>
                 <div className={cx('content')}>
                     {
+                        ID == 1 ? <p className={cx('title')}>CÁC LỚP ĐÃ TẠO</p>
+                        : <p className={cx('title')}>THÔNG TIN CÁ NHÂN</p>
+                    }
+                    {
+                        // context.role !== 1 ? <Main/> : 
                         ID === 1 ? <Table/> : <Main/>
                     }
 

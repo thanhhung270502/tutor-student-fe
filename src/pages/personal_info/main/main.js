@@ -17,7 +17,7 @@ function Main () {
 
     return (
         <aside className={cx('wrapper')}>
-            <p className={cx("title")}>Thông tin cá nhân</p>
+            {/* <p className={cx("title")}>Thông tin cá nhân</p> */}
             <div className={cx('input')}>
                 <div>
                     <span className={cx('fieldName')}>Họ và tên</span>
@@ -81,7 +81,6 @@ function Main () {
             <Popup 
                 trigger={openPopup}
                 setTrigger={setOpenPopup}>
-                    <h3 className={cx('message')} style={{paddingTop: '15px'}}>XÁC NHẬN THAY ĐỔI ?</h3>
             </Popup>
         </aside>
     )

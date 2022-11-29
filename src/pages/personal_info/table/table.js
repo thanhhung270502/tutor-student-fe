@@ -62,7 +62,7 @@ function Table() {
 
     return (
         <aside className={cx('wrapper')}>
-            <p className={cx("title")}>Lớp đã tạo</p>
+            {/* <p className={cx("title")}>Lớp đã tạo</p> */}
             <aside className={cx('table')}>
                 <table {...getTableProps()}>
                     <thead className={cx('header')}>
@@ -74,7 +74,7 @@ function Table() {
                             </tr>
                         ))}
                     </thead>
-                    <tbody {...getTableBodyProps()}>
+                    <tbody className={cx('body')}{...getTableBodyProps()}>
                         {rows.map((row => (
                             prepareRow(row),
                             <React.Fragment key={row.id}>
@@ -88,13 +88,17 @@ function Table() {
                                 {detail.includes(row.original.no) && (
                                 <tr className={cx('additionalInfo')}>
                                     <td style={{ textAlign: 'left' }} colSpan={row.cells.length}>
-                                        {text[0]}<br/>
-                                        {text[1]}<br/>
-                                        {text[2]}<br/>
-                                        {text[3]}<br/>
-                                        {text[4]}<br/>
-                                        {text[5]}<br/>
-                                        {text[6]}<br/>
+                                        <p style={{marginLeft: '10px', fontSize: '12px'}}>
+                                            <br/>
+                                            <i className={`fa-regular fa-clock`}></i> {text[0]}<br/>
+                                            <i className={`fi fi-rr-calendar`}></i> {text[1]}<br/>
+                                            <i className={`fi fi-rr-users`}></i> {text[2]}<br/>
+                                            <i className={`fi fi-rr-home`}></i> {text[3]}<br/>
+                                            <i className={`fi fi-rr-phone-call`}></i> {text[4]}<br/>
+                                            <i className={`fi fi-rr-credit-card`}></i> {text[5]}<br/>
+                                            <i className={`fi fi-rr-info`}></i> {text[6]}<br/>
+                                        </p>
+                                        <nav className={cx('changeClassInfo')}><a href="/create_class">Sửa</a></nav>
                                     </td>
                                 </tr>)}
                             </React.Fragment>

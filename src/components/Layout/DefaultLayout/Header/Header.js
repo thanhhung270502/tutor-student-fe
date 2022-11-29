@@ -157,11 +157,11 @@ const Tutor = () => {
             ))}
             <li className={`nav-item dropdown ${style.dropdown}`}>
                 <Link className={`nav-link dropdown-toggle ${style.dropdownBtn}`} to="#">
-                    Học viên chăm chỉ
+                    Gia sư
                 </Link>
                 <ul className={`dropdown-menu ${style.dropdownContent}`}>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/personal_info">
                             Thông tin cá nhân
                         </Link>
                     </li>
