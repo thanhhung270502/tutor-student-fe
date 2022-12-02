@@ -1,5 +1,5 @@
 :root {
-    --pink: rgba(255, 114, 125, 0.65);
+    --pinka:rgba(255, 114, 125, 0.65);
     --success: #C0FAC7;
     --success-hover: #6FFA80;
     --success-active: #19c52d;
@@ -10,11 +10,6 @@
     --banned-hover: rgba(252, 78, 93, 0.65);
     --banned-active: rgba(175, 9, 23, 0.65);
     --black: #090526;
-}
-
-.tutorList {
-    margin: auto;
-    width: 80%;
 }
 
 .success-btn {
@@ -59,26 +54,6 @@
     --bs-btn-active-bg: var(--banned-active);
     --bs-btn-active-border-color: none;
     --bs-btn-border-radius: 20px;
-    width: 40%;
+    width: 30%;
     margin-left: 20px;
-}
-
-.custom-thead {
-    background-color: var(--pink);
-    line-height: 40px;
-    border-radius: 20px;
-}
-
-#TH td,
-#TH th {
-    text-align: center;
-    vertical-align: middle;
-}
-
-#TH th:nth-of-type(4) {
-    border-radius: 0 20px 0 0;
-}
-
-#TH th:nth-of-type(1) {
-    border-radius: 20px 0 0 0;
 }
