@@ -17,7 +17,7 @@ function Main () {
 
     return (
         <aside className={cx('wrapper')}>
-            <p className={cx("title")}>Thông tin cá nhân</p>
+            {/* <p className={cx("title")}>Thông tin cá nhân</p> */}
             <div className={cx('input')}>
                 <div>
                     <span className={cx('fieldName')}>Họ và tên</span>
