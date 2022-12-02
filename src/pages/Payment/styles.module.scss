@@ -15,10 +15,11 @@
 .payment {
     margin: auto;
     width: 70%;
+    height: 80vh;
 }
 
 .custom-col {
-    margin: auto;
+    // margin: auto;
     text-align: center;
     vertical-align: middle;
 }
@@ -52,6 +53,7 @@
     --bs-btn-border-radius: 20px;
 }
 
-.img:hover {
-    width: 170px;
+.img {
+    // width: 170px;
+    cursor: pointer;
 }
