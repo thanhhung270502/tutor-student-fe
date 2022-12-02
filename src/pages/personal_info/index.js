@@ -43,12 +43,12 @@ function Personal_info({children}) {
                                 <button 
                                     onClick={handleClickButton1}
                                     style={{ backgroundColor: buttonID == 0 ? "" : "#FF727D" }}
-                                    className={cx('button')}>Lớp đã tạo</button>
+                                    className={cx('button')}>Lớp học</button>
                         </aside> : " "}
                 </Sidebar>
                 <div className={cx('content')}>
                     {
-                        ID == 1 ? <p className={cx('title')}>CÁC LỚP ĐÃ TẠO</p>
+                        ID == 1 ? (context.role == 3 ? <p className={cx('title')}>CÁC LỚP ĐANG DẠY</p> : <p className={cx('title')}>CÁC LỚP ĐÃ TẠO</p>)
                         : <p className={cx('title')}>THÔNG TIN CÁ NHÂN</p>
                     }
                     {
