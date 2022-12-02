@@ -56,7 +56,7 @@ const ProfessionalAdmin = () => {
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/confirmpayment">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/paymentStatus">
                             Xác nhận thanh toán
                         </Link>
                     </li>
@@ -73,7 +73,7 @@ const ProfessionalAdmin = () => {
 
 const SystemAdmin = () => {
     const sysadmin = ['Trang chủ', 'Danh sách user'];
-    const link = ['/', '/userlist'];
+    const link = ['/', '/userAccounts'];
     return (
         <React.Fragment>
             {sysadmin.map((v, index) => (
@@ -141,39 +141,40 @@ const Student = () => {
 };
 
 const Tutor = () => {
-    const student = ['Trang chủ', 'Lớp học'];
-    const link = ['/', '/classlist'];
+    const context = useContext(AppContext);
     return (
         <React.Fragment>
-            {/* Search */}
+            <li className={`nav-item ${clsx(style.headerItem)}`}>
+                <Link to="/" className={`nav-link ${clsx(style.link)}`}>
+                    Trang chủ
+                </Link>
+            </li>
             <Search />
-
-            {student.map((v, index) => (
-                <li key={index} className={`nav-item ${clsx(style.headerItem)}`}>
-                    <Link to={link[index]} className={`nav-link ${clsx(style.link)}`}>
-                        {v}
-                    </Link>
-                </li>
-            ))}
+            <li className={`nav-item ${clsx(style.headerItem)}`}>
+                <Link to="/classlist" className={`nav-link ${clsx(style.link)}`}>
+                    Lớp học
+                </Link>
+            </li>
             <li className={`nav-item dropdown ${style.dropdown}`}>
                 <Link className={`nav-link dropdown-toggle ${style.dropdownBtn}`} to="#">
-                    Học viên chăm chỉ
+                    Gia sư đẹp trai
                 </Link>
                 <ul className={`dropdown-menu ${style.dropdownContent}`}>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/personal_info">
                             Thông tin cá nhân
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/paymentStatus">
                             Thanh toán
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`}
+                        onClick={async () => {context.logout();}}>
                             Đăng xuất
-                        </Link>
+                        </button>
                     </li>
                 </ul>
             </li>
@@ -189,7 +190,7 @@ function Header() {
             <Link className={`navbar-brand ${style.logo}`} to="/">
                 <img src=".././logo.png" height="50"></img>
             </Link>
-            <button 
+            <button
                 className={`navbar-toggler ${style.togglerBut}`}
                 data-bs-toggle="collapse"
                 data-bs-target="#navLinks"
