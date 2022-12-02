@@ -15,7 +15,7 @@ role = 4: Nguoi tim GS
 */
 
 const AppContextProvider = ({ children }) => {
-    const [role, setRole] = useState('2');
+    const [role, setRole] = useState('1');
 
     const logout = () => {
         setRole('0');

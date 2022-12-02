@@ -6,8 +6,9 @@ import { Chart } from 'react-chartjs-2';
 import { Pie } from 'react-chartjs-2';
 import { Bar } from 'react-chartjs-2';
 import { Line } from 'react-chartjs-2';
-import style from './'
+import style from '../Thongke/Thongke.module.scss';
 import { useState} from 'react';
+import Select from 'react-select';
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title, PointElement,
     LineElement,);
 
@@ -151,21 +152,21 @@ const tempT =  tp === 'income'? Bar : Line;
                         </h3>
                         <h1 style={{ color: '#7D73C1', fontWeight: 700 }}> 1234 </h1>
                         <div className="pie-wrapper">
-                            <Pie options={{ maintainAspectRatio: false }} className="pie-chart" data={data1} />
+                            <Pie options={{ maintainAspectRatio: false }} className="style.pie-chart" data={data1} />
                         </div>
                         <br />
                         <br />
                         <h3 style={{ fontWeight: 700 }}>Số lớp học đã kết nối</h3>
                         <h1 style={{ color: '#7D73C1', fontWeight: 700 }}> 590 </h1>
                     </div>
-                    <div className="col-9">
+                    <div className={style['col-9']}>
                         
                         <div className="row">
                             <div className="col-3">
-                                <button className="btn btn-secondary" id = 'Xuat' >Xuất kết quả </button>
+                                <button className="btn btn-secondary" id = {style['Xuat']} >Xuất kết quả </button>
                             </div>
                             <div className="col-3">
-                                <select class="form-select" aria-label="Default select example" id = 'year' value = {year} onChange = {e=>setYear(e.target.value)}>
+                                <select className="form-select" aria-label="Default select example" id = {style['year']} value = {year} onChange = {e=>setYear(e.target.value)}>
                                     <option selected >Chọn năm</option>
                                     <option value="2019">2019</option>
                                     <option value="2020">2020</option>
@@ -174,7 +175,7 @@ const tempT =  tp === 'income'? Bar : Line;
                                 </select>
                             </div>
                             <div className="col-3">
-                                <select class="form-select" aria-label="Default select example" id = 'type' value = {tp} onChange = {e=>setTp(e.target.value)}>
+                                <select className="form-select" aria-label="Default select example" id = {style['type']} value = {tp} onChange = {e=>setTp(e.target.value)}>
                                     <option selected>Chọn kiểu dữ liệu </option>
                                     <option value="income">Doanh thu</option>
                                     <option value="interact">Lượng truy cập</option>
@@ -182,11 +183,11 @@ const tempT =  tp === 'income'? Bar : Line;
                             </div>
                             <div className="col-3">
                                 <select
-                                    class="form-select"
+                                    className='form-select'
                                     aria-label="Default select example"
                                     value = {prd} onChange = {e=>setPrd(e.target.value)}
-                                    id = 'often'
                                     datatype='btn-default'
+                                    id = {style['often']}
                                 >
                                     <option selected>
                                         Chọn chu kì

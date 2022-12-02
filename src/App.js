@@ -48,6 +48,7 @@ function App() {
                 {context.role === '1' && (
                     <>
                         <Route path="/userAccounts" element={<UserAccounts />} />
+                        <Route path="/thongke" element={<Thongke/>}/>
                     </>
                 )}
                 /************* only professional admin *************/
