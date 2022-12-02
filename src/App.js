@@ -10,6 +10,7 @@ import Createclass from './pages/CreateClass/index.js';
 import Login from './pages/Login'
 import Personal_info from './pages/personal_info/index.js';
 import ListTutor from './pages/ListTutor/index.js';
+import Thongke from './pages/Thongke/index.js';
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/create_class" element={<Createclass />} />
                 <Route path="/personal_info" element={<Personal_info />} />
                 <Route path="/tutorlist" element={<ListTutor />} />
+                <Route path="/thongke" element={<Thongke />} />
             </Routes>
         </Layout >
 
