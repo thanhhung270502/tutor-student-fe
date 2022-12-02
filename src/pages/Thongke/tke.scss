@@ -1,0 +1,45 @@
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+.pie-chart{
+    width: 400px;
+    padding-top: 5px;
+    padding-left: 0px;
+}
+
+#Xuat{
+    background-color: #C0FAC7;
+    border: none;
+}
+#year{
+    background-color: #7D73C1,
+}
+#type
+{
+   background-color: #FF727D;
+}
+#often
+{
+   background-color: #F3AC46,
+}
+.col-9{
+    position: relative;
+    background-color: white;
+    width: 900px;
+    height: 550px;
+    padding-top: 50px;
+    padding-left: 40px;
+    padding-right:30px;
+    border-radius: 83px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.06);
+    margin-left: 40px;
+}
+#colLeft{
+    margin-top: 50px;
+}
+#chart1,#chart2{
+    width: 500px;
+    padding-top:10px;
+    padding-bottom: 75px;
+    padding-left: 40px;
+    padding-right:40px;
+}

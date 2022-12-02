@@ -10,6 +10,7 @@ import Createclass from './pages/CreateClass/index.js';
 import Login from './pages/Login';
 import Personal_info from './pages/personal_info/index.js';
 import ListTutor from './pages/ListTutor/index.js';
+import Thongke from './pages/Thongke/index.js';
 import PendingClass from './pages/PendingClass/PendingClass';
 import PaymentStatus from './pages/payment_status//PaymentStatus';
 import Payment from './pages/Payment/index.js';
