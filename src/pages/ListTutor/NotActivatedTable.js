@@ -3,9 +3,11 @@ import { Button } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import clsx from 'clsx';
-import style from './styles.scss';
+import style from './styles.module.scss';
 import { useState } from 'react';
 import data from './NotActivatedUser.json';
+import TableStyle from '../../components/GlobalStyles/table.module.scss'
+
 
 function RenderTutor(tutor) {
     const DetailStyle = {
@@ -29,11 +31,11 @@ function RenderTutor(tutor) {
         <>
             <tr id="#TH" key={tutor.ID} onClick={handleClickDetail}>
                 <td> {tutor.ID} </td>
-                <td> {tutor.name} </td>
+                <td> {tutor.firstname + " " + tutor.lastname} </td>
                 <td> {tutor.registionDay} </td>
                 <td>
-                    <Button className='success-btn'onClick={() => handleClickActivate(tutor.ID)}>Đồng ý</Button>
-                    <Button className='warning-btn'onClick={() => handleClickActivate(tutor.ID)}>Từ chối</Button>
+                    <Button className={style['success-btn']}onClick={() => handleClickActivate(tutor.ID)}>Đồng ý</Button>
+                    <Button className={style['warning-btn']}onClick={() => handleClickActivate(tutor.ID)}>Từ chối</Button>
                 </td>
                     
             </tr>
@@ -77,9 +79,9 @@ export default function Render() {
         }
     }
     return (
-        <Table className='shadow rounded-4' striped hover>
-            <thead className='custom-thead'>
-                <tr id="#TH">
+        <Table className={TableStyle.table}>
+            <thead>
+                <tr>
                     <th onClick={() => sorting("ID")}>
                         ID
                     </th>
