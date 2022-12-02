@@ -135,7 +135,7 @@ function SignUp() {
                                     </a>
                                 </div>
                                 <div className="text-center pt-2">
-                                    <a className="btn-gray" href="#">
+                                    <a className="btn-gray" href="/">
                                         Quay lại
                                     </a>
                                 </div>

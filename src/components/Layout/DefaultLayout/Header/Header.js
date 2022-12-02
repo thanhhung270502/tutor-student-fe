@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import style from './Header.module.css';
+import Search from '../Search';
+import { AppContext } from '../../../../store/appContext';
 
 const Guest = () => {
     const guest = ['Tìm gia sư', 'Trở thành gia sư', 'About us'];
@@ -33,7 +35,7 @@ const Guest = () => {
 
 const ProfessionalAdmin = () => {
     const proadmin = ['Trang chủ', 'Duyệt gia sư', 'Duyệt lớp'];
-    const link = ['/', 'verifyTutorAccount', 'verifyClass'];
+    const link = ['/', '/tutorlist', '/pendingclass'];
     return (
         <React.Fragment>
             {proadmin.map((v, index) => (
@@ -49,19 +51,19 @@ const ProfessionalAdmin = () => {
                 </Link>
                 <ul className={`dropdown-menu ${style.dropdownContent}`}>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/personal_info">
                             Thông tin cá nhân
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/paymentStatus">
                             Xác nhận thanh toán
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} >
                             Đăng xuất
-                        </Link>
+                        </button>
                     </li>
                 </ul>
             </li>
@@ -71,7 +73,7 @@ const ProfessionalAdmin = () => {
 
 const SystemAdmin = () => {
     const sysadmin = ['Trang chủ', 'Danh sách user'];
-    const link = ['/', '/userlist'];
+    const link = ['/', '/userAccounts'];
     return (
         <React.Fragment>
             {sysadmin.map((v, index) => (
@@ -87,19 +89,19 @@ const SystemAdmin = () => {
                 </Link>
                 <ul className={`dropdown-menu ${style.dropdownContent}`}>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/personal_info">
                             Thông tin cá nhân
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/admin_thongke">
                             Thống kê
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`}>
                             Đăng xuất
-                        </Link>
+                        </button>
                     </li>
                 </ul>
             </li>
@@ -125,14 +127,54 @@ const Student = () => {
                 </Link>
                 <ul className={`dropdown-menu ${style.dropdownContent}`}>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/personal_info">
                             Thông tin cá nhân
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="#">
-                            Đăng xuất
+                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`}>Đăng xuất</button>
+                    </li>
+                </ul>
+            </li>
+        </React.Fragment>
+    );
+};
+
+const Tutor = () => {
+    const context = useContext(AppContext);
+    return (
+        <React.Fragment>
+            <li className={`nav-item ${clsx(style.headerItem)}`}>
+                <Link to="/" className={`nav-link ${clsx(style.link)}`}>
+                    Trang chủ
+                </Link>
+            </li>
+            <Search />
+            <li className={`nav-item ${clsx(style.headerItem)}`}>
+                <Link to="/classlist" className={`nav-link ${clsx(style.link)}`}>
+                    Lớp học
+                </Link>
+            </li>
+            <li className={`nav-item dropdown ${style.dropdown}`}>
+                <Link className={`nav-link dropdown-toggle ${style.dropdownBtn}`} to="#">
+                    Gia sư đẹp trai
+                </Link>
+                <ul className={`dropdown-menu ${style.dropdownContent}`}>
+                    <li className={`nav-item`}>
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/personal_info">
+                            Thông tin cá nhân
                         </Link>
+                    </li>
+                    <li className={`nav-item`}>
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/paymentStatus">
+                            Thanh toán
+                        </Link>
+                    </li>
+                    <li className={`nav-item`}>
+                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`}
+                        onClick={async () => {context.logout();}}>
+                            Đăng xuất
+                        </button>
                     </li>
                 </ul>
             </li>
@@ -141,6 +183,8 @@ const Student = () => {
 };
 
 function Header() {
+    const context = useContext(AppContext);
+
     return (
         <nav id="mainNavbar" className={`navbar navbar-light navbar-expand-lg sticky-top ${clsx(style.navbar)}`}>
             <Link className={`navbar-brand ${style.logo}`} to="/">
@@ -156,10 +200,16 @@ function Header() {
             </button>
             <div className={`collapse navbar-collapse ${style.grbut}`} id="navLinks">
                 <ul className={`navbar-nav ms-auto`}>
-                    <Guest />
+                    {/* <Guest /> */}
                     {/* <SystemAdmin /> */}
                     {/* <ProfessionalAdmin /> */}
                     {/* <Student /> */}
+                    {/* <Tutor /> */}
+                    {context.role === '0' && <Guest />}
+                    {context.role === '1' && <SystemAdmin />}
+                    {context.role === '2' && <ProfessionalAdmin />}
+                    {context.role === '3' && <Tutor />}
+                    {context.role === '4' && <Student />}
                 </ul>
             </div>
         </nav>

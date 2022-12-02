@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
-import style from './ClassList.module.css'
+import { AppContext } from '~/store/appContext'
+import style from '../../components/GlobalStyles/table.module.scss'
 
-const ClassDetails = (props) => {
+const ClassDetails = (props) => {   
     const [info, setInfo] = useState(props.info)
 
     /* useEffect(() => {
@@ -60,18 +61,21 @@ const Row = (props) => {
     const [classData, setClassData] = useState(props.data)
     const [show, setShow] = useState(false)
     const c = props.c
+    const context = useContext(AppContext);
 
     const toggleShow = () => {
-        setShow(!show);
+        (context.role === '1' ||
+            context.role === '2' ||
+            context.role === '3') ? setShow(!show) : setShow(false);
     }
 
     return (
         <>
-            <tr className={style.tr} onClick={toggleShow}>
-                <td className={`col-md-3 ${clsx(style.td)}`}>{c.classID}</td>
-                <td className={`col-md-3 ${clsx(style.td)}`}>{c.subject}</td>
-                <td className={`col-md-3 ${clsx(style.td, style.center)}`}>{c.grade}</td>
-                <td className={`col-md-3 ${clsx(style.td)}`}>{c.date}</td>
+            <tr onClick={toggleShow}>
+                <td>{c.classID}</td>
+                <td>{c.subject}</td>
+                <td>{c.grade}</td>
+                <td>{c.date}</td>
 
             </tr>
             {show && <ClassDetails info={classData} />}

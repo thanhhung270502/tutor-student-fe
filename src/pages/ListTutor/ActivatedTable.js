@@ -1,18 +1,17 @@
 import { Button } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
+import { usePagination } from 'react-table';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import myStyle from './styles.scss';
+import myStyle from './styles.module.scss';
 import { useState } from 'react';
 import data from './ActivatedUser.json';
+import TableStyle from '../../components/GlobalStyles/table.module.scss'
 
 
 
 function RenderTutor(tutor) {
     const DetailStyle = {
         textAlign: "left",
-        paddingLeft: "100px",
-        paddingTop: "20px",
-        paddingBottom: "20px"
     }
     const [showDetail, setShowDetail] = useState(false);
 
@@ -29,10 +28,10 @@ function RenderTutor(tutor) {
         <>
             <tr key={tutor.ID} onClick={handleClickDetail}>
                 <td> {tutor.ID} </td>
-                <td> {tutor.name} </td>
+                <td> {tutor.firstname + " " + tutor.lastname} </td>
                 <td> {tutor.registionDay} </td>
                 <td>
-                    <Button className='banned-btn' onClick={() => handleClickActivate(tutor.ID)}>Cấm</Button>
+                    <Button className={myStyle['banned-btn']} onClick={() => handleClickActivate(tutor.ID)}>Cấm</Button>
                 </td>
                     
             </tr>
@@ -40,14 +39,14 @@ function RenderTutor(tutor) {
                 showDetail &&
                 <tr>
                     <td style={DetailStyle} colSpan={2}>
-                        <p>{tutor.CCCD}</p>
-                        <p>{tutor.DOB}</p>
-                        <p>{tutor.address}</p>
+                        <p>Giới tính: {tutor.sex}</p>
+                        <p>Số CCCD: {tutor.CCCD}</p>
+                        <p>Ngày sinh: {tutor.DOB}</p>
                     </td>
                     <td style={DetailStyle} colSpan={3}>
-                        <p>{tutor.CCCD}</p>
-                        <p>{tutor.DOB}</p>
-                        <p>{tutor.address}</p>
+                        <p>Địa chỉ: {tutor.address}</p>
+                        <p>Email: {tutor.email}</p>
+                        <p>Số điện thoại: {tutor.tel}</p>
                     </td>
                 </tr> 
             }
@@ -76,12 +75,10 @@ export default function Render() {
         }
     }
     return (
-        <Table className='shadow rounded-4' striped hover>
-            <thead className='custom-thead'>
+        <Table className={TableStyle.table}>
+            <thead>
                 <tr>
-                    <th onClick={() => sorting("ID")}>
-                        ID
-                    </th>
+                    <th onClick={() => sorting("ID")}>ID</th>
                     <th onClick={() => sorting("name")}>Họ và tên</th>
                     <th onClick={() => sorting("registionDay")}>Ngày đăng kí</th>
                     <th></th>

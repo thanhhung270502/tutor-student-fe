@@ -8,7 +8,7 @@ const cx = className.bind(styles);
 function Sidebar(props) {
     return (
         <aside className={cx('wrapper')}>
-            <Info />
+            <Info/>
             {props.children}
         </aside>
     )
