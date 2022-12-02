@@ -1,10 +1,11 @@
 import className from 'classnames/bind'
 import styles from './table.module.scss'
-import React, {Children, useMemo} from 'react';
+import React, {Children, useContext, useMemo} from 'react';
 import { useState, useEffect } from 'react';
 import { useTable } from 'react-table';
 import Data from './data.json';
 import { Columns } from './column';
+import { AppContext } from 'src/store/appContext';
 import { getDefaultNormalizer } from '@testing-library/react';
 
 const cx = className.bind(styles);
@@ -19,6 +20,8 @@ let text = ['Thời gian: thứ 3, thứ 5 hàng tuần, 19h-20h30',
 
 function Table() {
     
+    const context = useContext(AppContext);
+
     const columns = useMemo(() => Columns, []);
     const data = useMemo(() => Data, []);
 
@@ -98,7 +101,7 @@ function Table() {
                                             <i className={`fi fi-rr-credit-card`}></i> {text[5]}<br/>
                                             <i className={`fi fi-rr-info`}></i> {text[6]}<br/>
                                         </p>
-                                        <nav className={cx('changeClassInfo')}><a href="/create_class">Sửa</a></nav>
+                                        {context.role == 4 ? <nav className={cx('changeClassInfo')}><a href="/createclass">Sửa</a></nav> : ''}
                                     </td>
                                 </tr>)}
                             </React.Fragment>

@@ -48,7 +48,10 @@ function Personal_info({children}) {
                 </Sidebar>
                 <div className={cx('content')}>
                     {
-                        ID == 1 ? (context.role == 3 ? <p className={cx('title')}>CÁC LỚP ĐANG DẠY</p> : <p className={cx('title')}>CÁC LỚP ĐÃ TẠO</p>)
+                        ID == 1 ?
+                        (context.role == 3 ?
+                                <p className={cx('title')}>CÁC LỚP ĐANG DẠY</p>
+                                : <p className={cx('title')}>CÁC LỚP ĐÃ TẠO</p>)
                         : <p className={cx('title')}>THÔNG TIN CÁ NHÂN</p>
                     }
                     {
