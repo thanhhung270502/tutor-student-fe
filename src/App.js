@@ -12,12 +12,14 @@ import Personal_info from './pages/personal_info/index.js';
 import ListTutor from './pages/ListTutor/index.js';
 import PendingClass from './pages/PendingClass/PendingClass';
 import PaymentStatus from './pages/payment_status//PaymentStatus';
+import Payment from './pages/Payment/index.js';
 import UserAccounts from './pages/userAccounts/userAccounts.js';
 
 import AboutUs from './pages/AboutUs/AboutUs';
 
 // IMPORT CONTEXT
 import { AppContext } from './store/appContext';
+import PaymentList from './pages/PaymentList/PaymentList.js';
 
 function App() {
     const context = useContext(AppContext);
@@ -44,7 +46,7 @@ function App() {
                 /************* only system admin *************/
                 {context.role === '1' && (
                     <>
-                        <Route path="/userlist" element={<UserAccounts />} />
+                        <Route path="/userAccounts" element={<UserAccounts />} />
                     </>
                 )}
                 /************* only professional admin *************/
@@ -58,7 +60,8 @@ function App() {
                 /************* only tutor *************/
                 {context.role === '3' && (
                     <>
-                        
+                        <Route path="/payment" element={<Payment />} />
+                        <Route path="/paymentList" element={<PaymentList />} />
                     </>
                 )}
                 /************* only student *************/

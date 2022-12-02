@@ -1,7 +1,9 @@
-import React, { createContext } from 'react'
+import React, { createContext, useCallback, useState, useEffect } from 'react'
 
 const AppContext = createContext({
     role: '',
+    login: () => { },
+    logout: () => { },
 });
 
 /*
@@ -13,9 +15,21 @@ role = 4: Nguoi tim GS
 */
 
 const AppContextProvider = ({ children }) => {
+    const [role, setRole] = useState('3');
+
+    const logout = () => {
+        setRole('0');
+        console.log(role);
+    };
+
+    const login = () => {
+        // localStorage.setItem('role', role);
+    }
 
     const contextValue = {
-        role: '3',
+        role: role,
+        login: login,
+        logout: logout,
     }
 
     return (
