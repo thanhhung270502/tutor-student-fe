@@ -22,8 +22,30 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import { AppContext } from './store/appContext';
 import PaymentList from './pages/PaymentList/PaymentList.js';
 
+import axios from "axios";
+import Books from './pages/Book/index.js';
+import { useState } from 'react';
+import { useEffect } from 'react';
+
+const API_URL = "http://localhost:3000/api/v1/books"
+
+function getAPIData() {
+    return axios.get(API_URL).then((response) => response.data)
+}
+
 function App() {
     const context = useContext(AppContext);
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        let mounted = true;
+        getAPIData().then((items) => {
+            if (mounted) {
+                setBooks(items);
+            }
+        });
+        return () => (mounted = false);
+    }, []);
     return (
         <Layout>
             <Routes>
@@ -31,6 +53,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/aboutus" element={<AboutUs />} />
                 <Route path="/classlist" element={<ClassList />} />
+                <Route path="/books" element={<Books books={books} />} />
                 /************* only REGISTERED USER *************/
                 {context.role !== '0' && (
                     <>
