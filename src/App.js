@@ -47,7 +47,7 @@ function App() {
                     </>
                 }
                 /*************  only professional admin *************/
-                {context.role === '2' &&
+                {context.role === 'QuanLyChuyenMon' &&
                     <>
                         <Route path="/tutorlist" element={<ListTutor />} />
                         <Route path="/pendingclass" element={<PendingClass />} />

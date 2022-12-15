@@ -69,13 +69,31 @@ const Row = (props) => {
             context.role === '3') ? setShow(!show) : setShow(false);
     }
 
+    const create_day = new Date(c.created_at);
+    const [classID, setClassID] = useState('');
+    useEffect(() => {
+    if (c.subject === 'TOÁN') setClassID(`T${c.id}`);
+    else if (c.subject === 'VẬT LÝ') setClassID(`VL${c.id}`);
+    else if (c.subject === 'HÓA HỌC') setClassID(`HH${c.id}`);
+    else if (c.subject === 'SINH HỌC') setClassID(`SH${c.id}`);
+    else if (c.subject === 'ANH VĂN') setClassID(`AV${c.id}`);
+    else if (c.subject === 'NGỮ VĂN') setClassID(`NV${c.id}`);
+    else setClassID(`K${c.id}`);
+    },[])
+
     return (
         <>
             <tr className={style.tr} onClick={toggleShow}>
-                <td className={`col-md-3 ${clsx(style.td)}`}>{c.classID}</td>
+                <td className={`col-md-3 ${clsx(style.td)}`}>{
+                    classID
+                }</td>
                 <td className={`col-md-3 ${clsx(style.td)}`}>{c.subject}</td>
                 <td className={`col-md-3 ${clsx(style.td, style.center)}`}>{c.grade}</td>
-                <td className={`col-md-3 ${clsx(style.td)}`}>{c.date}</td>
+                <td className={`col-md-3 ${clsx(style.td)}`}>{create_day.toLocaleString('vi-VN', {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "numeric"
+                })}</td>
 
             </tr>
             {show && <ClassDetails info={classData} />}

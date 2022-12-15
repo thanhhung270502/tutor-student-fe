@@ -166,7 +166,7 @@ function Header() {
                         context.role === '1' &&  <SystemAdmin /> 
                     }
                     {
-                        context.role === '2' &&  <ProfessionalAdmin />
+                        context.role === 'QuanLyChuyenMon' &&  <ProfessionalAdmin />
                     }
                     {/* {
                         context.role === '3' &&  <Guest />
