@@ -6,6 +6,7 @@ import style from './ClassList.module.css';
 import { Table } from 'react-bootstrap';
 import { usePagination } from 'react-use-pagination';
 import data from './ClassList.json';
+import axios from "axios";
 
 import Row from './Row';
 
@@ -16,6 +17,27 @@ const ClassList = () => {
     const [currentClassInfo, setCurrentClassInfo] = useState([]);
     // 0: default, 1: filter subject, 2: filter class, 3: filter both
     const [number, setNumber] = useState(0);
+    const URL = "http://localhost:3000"
+    const getClassInfo = () => {
+        return axios.get(`${URL}/api/v1/classrooms`).then((response) => response.data);
+    }
+
+    useEffect(() => {
+        console.log("use effect");
+        (
+            async () => {
+                await getClassInfo().then((data) => {
+                    setClassInfo(data);
+                    setCurrentClassInfo(data);
+                    setClassInfo(data);
+                    setSubjectClassInfo(data);
+                    setClassClassInfo(data);
+                });
+            }
+        )()
+    }, [])
+
+
 
     const handleFilteredSubject = (e) => {
         console.log(number);
@@ -27,16 +49,16 @@ const ClassList = () => {
                 selected === 'all'
                     ? data
                     : selected === 'Khác'
-                    ? data.filter(
-                          (c) =>
-                              c.subject !== 'Toán' &&
-                              c.subject !== 'Vật lý' &&
-                              c.subject !== 'Hoá học' &&
-                              c.subject !== 'Sinh học' &&
-                              c.subject !== 'Anh văn' &&
-                              c.subject !== 'Ngữ văn',
-                      )
-                    : data.filter((c) => c.subject === selected);
+                        ? data.filter(
+                            (c) =>
+                                c.subject !== 'Toán' &&
+                                c.subject !== 'Vật lý' &&
+                                c.subject !== 'Hoá học' &&
+                                c.subject !== 'Sinh học' &&
+                                c.subject !== 'Anh văn' &&
+                                c.subject !== 'Ngữ văn',
+                        )
+                        : data.filter((c) => c.subject === selected);
             setNumber(1);
             setSubjectClassInfo(res);
         } else if (number === 2 || number === 3) {
@@ -44,31 +66,31 @@ const ClassList = () => {
                 selected === 'all'
                     ? data
                     : selected === 'Khác'
-                    ? data.filter(
-                          (c) =>
-                              c.subject !== 'Toán' &&
-                              c.subject !== 'Vật lý' &&
-                              c.subject !== 'Hoá học' &&
-                              c.subject !== 'Sinh học' &&
-                              c.subject !== 'Anh văn' &&
-                              c.subject !== 'Ngữ văn',
-                      )
-                    : data.filter((c) => c.subject === selected);
+                        ? data.filter(
+                            (c) =>
+                                c.subject !== 'Toán' &&
+                                c.subject !== 'Vật lý' &&
+                                c.subject !== 'Hoá học' &&
+                                c.subject !== 'Sinh học' &&
+                                c.subject !== 'Anh văn' &&
+                                c.subject !== 'Ngữ văn',
+                        )
+                        : data.filter((c) => c.subject === selected);
 
             res =
                 selected === 'all'
                     ? classClassInfo
                     : selected === 'Khác'
-                    ? classClassInfo.filter(
-                          (c) =>
-                              c.subject !== 'Toán' &&
-                              c.subject !== 'Vật lý' &&
-                              c.subject !== 'Hoá học' &&
-                              c.subject !== 'Sinh học' &&
-                              c.subject !== 'Anh văn' &&
-                              c.subject !== 'Ngữ văn',
-                      )
-                    : classClassInfo.filter((c) => c.subject === selected);
+                        ? classClassInfo.filter(
+                            (c) =>
+                                c.subject !== 'Toán' &&
+                                c.subject !== 'Vật lý' &&
+                                c.subject !== 'Hoá học' &&
+                                c.subject !== 'Sinh học' &&
+                                c.subject !== 'Anh văn' &&
+                                c.subject !== 'Ngữ văn',
+                        )
+                        : classClassInfo.filter((c) => c.subject === selected);
             setNumber(3);
             setSubjectClassInfo(res_2);
         }
@@ -110,18 +132,6 @@ const ClassList = () => {
         startIndex: 0,
         endIndex: 11,
     });
-
-    useEffect(() => {
-        /* use api / wait until data is updated
-        async () => {
-            info = await getClassInfo();
-            setClassInfo(info);
-        } */
-        setCurrentClassInfo(data);
-        setClassInfo(data);
-        setSubjectClassInfo(data);
-        setClassClassInfo(data);
-    }, []);
 
     return (
         <div className={`container ${style.container}`}>
