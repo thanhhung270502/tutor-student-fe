@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
 import style from './userAccounts.module.scss'
+import { AppContext } from 'src/store/appContext';
+import { useDebugValue } from 'react'
 
 const ClassDetails = (props) => {
     const [info, setInfo] = useState(props.info)
@@ -53,11 +55,18 @@ const Row = (props) => {
     const [show, setShow] = useState(false)
     const [del, setDel] = useState(true)
     const c = props.c
+    const context = useContext(AppContext);
 
-    const [hide, setHide] = useState(false)
-
+    const [hide, setHide] = useState(false);
     const Hide = () => {
         setHide(!hide);
+        console.log(hide);
+    }
+
+    const [h, setH] = useState(false);
+    const H = () => {
+        setH(!h);
+        console.log(h);
     }
 
     const toggleShow = () => {
@@ -72,18 +81,31 @@ const Row = (props) => {
                     <td onClick={toggleShow} className={`col-md-3 align-middle ${clsx(style.td, style.center)}`}>{c.accountCreatedate}</td>
                     <td onClick={toggleShow} className={`col-md-2 align-middle ${clsx(style.td, style.center)}`}>{c.role}</td>
                     {<td className={`col-md-2 align-middle ${clsx(style.td, style.center)}`}>
-                        {!hide && <button type="button"
+                        {!hide && c.role !== 'Gia Sư' && c.role !== 'Phụ huynh / Học sinh' && <button type="button"
                             className={`btn ${clsx(style.accept, style.center)}`}
                             onClick={() => {
                                 Hide(false);
-                            }}>
-                            CẤP QUYỀN
-                        </button> || <button type="button"
+                            }}> CẤP QUYỀN
+                        </button> || c.role !== 'Gia Sư' && c.role !== 'Phụ huynh / Học sinh' && <button type="button"
                             className={`btn ${clsx(style.decline, style.center)}`}
                             onClick={() => {
                                 Hide(false);
                             }}>
                             XÓA QUYỀN
+                        </button>}
+
+                        {!hide && c.role !== 'Quản lí chuyên môn' && c.role !== 'Quản lí hệ thống' && <button type="button"
+                            className={`btn ${clsx(style.ban, style.center)}`}
+                            onClick={() => {
+                                Hide(false);
+                            }}> 
+                            CHẶN
+                        </button> || c.role !== 'Quản lí chuyên môn' && c.role !== 'Quản lí hệ thống' && <button type="button"
+                            className={`btn ${clsx(style.unban, style.center)}`}
+                            onClick={() => {
+                                Hide(false);
+                            }}> 
+                            BỎ CHẶN
                         </button>}
                     </td>}
                     {/* <td className={`col-md-2 ${style.td}`}>

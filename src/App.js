@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import React, { useContext } from 'react';
+import React, {useState, useContext } from 'react';
 import Layout from '~/components/Layout/DefaultLayout/Layout';
 
 import Home from './pages/Home/Home.js';
@@ -22,15 +22,20 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import { AppContext } from './store/appContext';
 import PaymentList from './pages/PaymentList/PaymentList.js';
 
+import axios from "axios";
+import { faUnlockKeyhole } from '@fortawesome/free-solid-svg-icons';
+import { useEffect } from 'react';
+
 function App() {
     const context = useContext(AppContext);
+    
     return (
         <Layout>
             <Routes>
                 /************* all user *************/
-                <Route path="/" element={<Home />} />
-                <Route path="/aboutus" element={<AboutUs />} />
-                <Route path="/classlist" element={<ClassList />} />
+                        <Route path="/" element={<Home />} />
+                        <Route path="/aboutus" element={<AboutUs />} />
+                        <Route path="/classlist" element={<ClassList />} />
                 /************* only REGISTERED USER *************/
                 {context.role !== '' && (
                     <>
