@@ -35,8 +35,8 @@ const Guest = () => {
 };
 
 const ProfessionalAdmin = () => {
-    const proadmin = ['Trang chủ', 'Duyệt gia sư', 'Duyệt lớp'];
-    const link = ['/', '/tutorlist', '/pendingclass'];
+    const proadmin = ['Trang chủ', 'Duyệt gia sư', 'Duyệt lớp', 'Giao lớp'];
+    const link = ['/', '/tutorlist', '/pendingclass', '/assignclass'];
     return (
         <React.Fragment>
             {proadmin.map((v, index) => (

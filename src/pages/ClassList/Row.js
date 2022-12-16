@@ -4,6 +4,8 @@ import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
 import style from '../../components/GlobalStyles/table.module.scss'
 import { AppContext } from '~/store/appContext'
+import btnStyle from './ClassList.module.scss'
+
 
 const ClassDetails = (props) => {
     const [info, setInfo] = useState(props.info)
@@ -85,7 +87,13 @@ const Row = (props) => {
                     month: "2-digit",
                     day: "numeric"
                 })}</td>
-
+                {
+                    context.role === 'GiaSu' &&
+                    <button type="button"
+                        className={`btn ${btnStyle.accept}`}>
+                        Đồng ý
+                    </button>
+                }
             </tr>
             {show && <ClassDetails info={classData} />}
         </>

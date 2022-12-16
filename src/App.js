@@ -15,6 +15,7 @@ import PendingClass from './pages/PendingClass/PendingClass';
 import PaymentStatus from './pages/payment_status//PaymentStatus';
 import Payment from './pages/Payment/index.js';
 import UserAccounts from './pages/userAccounts/userAccounts.js';
+import AssignClass from './pages/AssignClass/AssignClass'
 
 import AboutUs from './pages/AboutUs/AboutUs';
 
@@ -57,6 +58,7 @@ function App() {
                         <Route path="/tutorlist" element={<ListTutor />} />
                         <Route path="/pendingclass" element={<PendingClass />} />
                         <Route path="/paymentStatus" element={<PaymentStatus />} />
+                        <Route path="/assignclass" element={<AssignClass />} />
                     </>
                 )}
                 /************* only tutor *************/
