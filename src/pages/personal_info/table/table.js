@@ -82,7 +82,7 @@ function Table() {
                             prepareRow(row),
                             <React.Fragment key={row.id}>
                                 <tr {...row.getRowProps()}
-                                style={{ textAlign:'center' }}
+                                style={{ textAlign:'center', 'padding': '1rem 0' }}
                                 onClick={() => showFullInfo(row.original.no)}>
                                     {row.cells.map((cell) => {
                                         return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
@@ -91,8 +91,7 @@ function Table() {
                                 {detail.includes(row.original.no) && (
                                 <tr className={cx('additionalInfo')}>
                                     <td style={{ textAlign: 'left' }} colSpan={row.cells.length}>
-                                        <p style={{marginLeft: '10px', fontSize: '12px'}}>
-                                            <br/>
+                                        <p style={{marginLeft: '1.5rem', fontSize: '12px', 'line-height': '25px', 'margin-top': '0.25rem'}}>
                                             <i className={`fa-regular fa-clock`}></i> {text[0]}<br/>
                                             <i className={`fi fi-rr-calendar`}></i> {text[1]}<br/>
                                             <i className={`fi fi-rr-users`}></i> {text[2]}<br/>
@@ -101,7 +100,7 @@ function Table() {
                                             <i className={`fi fi-rr-credit-card`}></i> {text[5]}<br/>
                                             <i className={`fi fi-rr-info`}></i> {text[6]}<br/>
                                         </p>
-                                        {context.role == 4 ? <nav className={cx('changeClassInfo')}><a href="/createclass">Sửa</a></nav> : ''}
+                                        {context.role == "NguoiCanTimGiaSu" ? <nav className={cx('changeClassInfo')}><a href="/editclass" className='btn btn-warning' style={{'padding': '6px 20px', 'border-radius': '100px', 'margin-bottom': '0.5rem', 'font-size': '0.8rem'}}>Sửa</a></nav> : ''}
                                     </td>
                                 </tr>)}
                             </React.Fragment>

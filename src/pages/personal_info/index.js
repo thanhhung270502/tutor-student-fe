@@ -31,7 +31,7 @@ function Personal_info({children}) {
     // const context = 1;
 
     return (
-        <div className={cx('wrapper')}>
+        <div className={cx('wrapper')} style={{'padding': '1.5rem 0'}}>
             <div className={cx('container')}>
                 <Sidebar>
                     {context.role !== "QuanLyHeThong" && context.role !== "QuanLyChuyenMon" ? 

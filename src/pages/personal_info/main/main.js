@@ -72,7 +72,7 @@ function Main () {
                 />
             </div>
             
-            <div>   
+            <div className="d-flex justify-content-end" style={{'padding': '10px 20px 0'}}>   
                 <button className={cx('save')}
                     //onClick={e => setUserInput(e.target.value)}
                     onClick={() => setOpenPopup(true)}

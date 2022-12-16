@@ -6,6 +6,7 @@ import Home from './pages/Home/Home.js';
 import ClassList from './pages/ClassList/ClassList';
 import SignUp from './pages/SignUp/index.js';
 import Createclass from './pages/CreateClass/index.js';
+import EditClass from './pages/EditClass/index.js';
 
 import Login from './pages/Login';
 import Personal_info from './pages/personal_info/index.js';
@@ -77,6 +78,7 @@ function App() {
                 {context.role === 'NguoiCanTimGiaSu' && (
                     <>
                         <Route path="/createclass" element={<Createclass />} />
+                        <Route path="/editclass" element={<EditClass />} />
                     </>
                 )}
             </Routes>

@@ -1,5 +1,5 @@
 .wrapper {
-    width: 430px;
+    // width: 430px;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -17,8 +17,7 @@
         box-sizing: border-box;
         .fieldName {
             display: block;
-            padding-top: 10px;
-            padding-bottom: 1px;
+            padding: 0.5rem 0;
         }
 
         .inputField {
@@ -26,8 +25,8 @@
             border-color: #B275E4;
             border-radius: 10px;
             block-size: 30px;
-            font-size: 15px;
-            height: 30px;
+            font-size: 15px;    
+            padding: 1rem 0.5rem;
         }
     }
     input:disabled {
@@ -35,9 +34,10 @@
     }
     .save {
         display: flex;
-        margin-left: 306px;
-        padding: 10px 30px;
-        border-radius: 15px;
+        // margin-left: 306px;
+        
+        padding: 8px 30px;
+        border-radius: 100px;
         border: none;
         background-color: #FF727D;
         color: #fff;
