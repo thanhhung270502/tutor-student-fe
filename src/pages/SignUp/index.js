@@ -16,8 +16,8 @@ function SignUp() {
     const [data, setData] = useState({
         email: null,
         fullname: null,
-        image: null,
         address: null,
+        password: null,
         phone: null,
         cccd: null,
         role: "NguoiCanTimGiaSu",
@@ -156,7 +156,7 @@ function SignUp() {
                                                     id="inputGroupSelect01"
                                                     name="role"
                                                     onChange={async (event) => {
-                                                        event.target.value == "2" ? setUpload(true) : setUpload(false)
+                                                        event.target.value === "2" ? setUpload(true) : setUpload(false)
                                                     }}
                                                 >
                                                     <option defaultValue="0">Choose...</option>

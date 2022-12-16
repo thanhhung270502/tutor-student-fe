@@ -25,7 +25,7 @@ function Createclass() {
             ...prev,
             [name]: value.toUpperCase(),
         }));
-        console.log('hi')
+        console.log(data.rank)
     }
 
     const handleSubmit = async (event) => {
@@ -47,13 +47,11 @@ function Createclass() {
                                     <label htmlFor="exampleFormControlInput1" className="form-label">
                                         Cấp bậc
                                     </label>
-                                    <select onChange={handleChange} name="rank" className="form-select" aria-label="Default select example">
-                                        <option value="1">
-                                            Tiểu học
-                                        </option>
-                                        <option value="2">Trung học cơ sở</option>
-                                        <option value="3">Trung học phổ thông</option>
-                                        <option value="4">Khác</option>
+                                    <select onChange={handleChange} name="rank" className="form-select" defaultValue="KHÁC">
+                                        <option value="Khác">Khác</option>
+                                        <option value="Tiểu học">Tiểu học</option>
+                                        <option value="Trung học">Trung học cơ sở</option>
+                                        <option value="Trung học phổ thông">Trung học phổ thông</option>
                                     </select>
                                 </div>
                             </div>
@@ -80,21 +78,29 @@ function Createclass() {
                                                 Khối lớp
                                             </label>
                                             <select onChange={handleChange} name="grade" className="form-select" aria-label="Default select example">
-                                                <option value="1">
-                                                    1
-                                                </option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="6">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">Khác</option>
+                                                {
+                                                    data.rank === "TIỂU HỌC" ?
+                                                        <>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                        </> : (data.rank === "TRUNG HỌC" ? <>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                        </> : (data.rank === "TRUNG HỌC PHỔ THÔNG" ?
+                                                            <>
+                                                                <option value="10">10</option>
+                                                                <option value="11">11</option>
+                                                                <option value="12">12</option>
+                                                            </> :
+                                                            <option value="Khác">Khác</option>))
+
+
+                                                }
                                             </select>
                                         </div>
                                     </div>
@@ -135,7 +141,7 @@ function Createclass() {
                                     <label htmlFor="exampleFormControlInput1" className="form-label">
                                         Thời gian
                                     </label>
-                                    <textarea onChange={handleChange} name="time" className="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                    <textarea onChange={handleChange} name="time" className="form-control" placeholder="19:00-21:00 Thứ 2, 4, 6..." rows="1"></textarea>
                                 </div>
                             </div>
                             <div className="col-6">
@@ -145,7 +151,7 @@ function Createclass() {
                                     </label>
                                     <input
                                         name="phone"
-                                        type="text"
+                                        type="phone"
                                         className="form-control"
                                         id="exampleFormControlInput1"
                                         placeholder="0923 123 123"
@@ -164,7 +170,7 @@ function Createclass() {
                                         <div className="mb-3">
                                             <input
                                                 name="time_to_start"
-                                                type="text"
+                                                type="date"
                                                 className="form-control"
                                                 id="exampleFormControlInput1"
                                                 placeholder="Từ..."
@@ -176,7 +182,7 @@ function Createclass() {
                                         <div className="mb-3">
                                             <input
                                                 name="time_to_end"
-                                                type="text"
+                                                type="date"
                                                 className="form-control"
                                                 id="exampleFormControlInput1"
                                                 placeholder="Đến..."

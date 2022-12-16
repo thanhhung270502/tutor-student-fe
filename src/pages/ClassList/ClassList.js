@@ -5,13 +5,13 @@ import clsx from 'clsx'
 import style from '../../components/GlobalStyles/table.module.scss'
 import { Table } from 'react-bootstrap'
 import { usePagination } from 'react-use-pagination';
-import data from './ClassList.json';
+// import data from './ClassList.json';
 import { getClassInfo } from '~/api/api'
 
 import Row from './Row';
 
 const ClassList = () => {
-    const [classInfo, setClassInfo] = useState([]);
+    const [data, setData] = useState([]);
     const [subjectClassInfo, setSubjectClassInfo] = useState([]);
     const [classClassInfo, setClassClassInfo] = useState([]);
     const [currentClassInfo, setCurrentClassInfo] = useState([]);
@@ -22,9 +22,9 @@ const ClassList = () => {
         (
             async () => {
                 await getClassInfo().then((data) => {
-                    setClassInfo(data);
+                    setData(data);
                     setCurrentClassInfo(data);
-                    setClassInfo(data);
+                    setData(data);
                     setSubjectClassInfo(data);
                     setClassClassInfo(data);
                 });
@@ -36,7 +36,7 @@ const ClassList = () => {
         console.log(number);
         const selected = e.target.value;
         // const res = selected === "all" ? data : currentClassInfo.filter((c) => c.subject === selected);
-        let res = classInfo;
+        let res = data;
         if (number === 0 || number === 1) {
             res =
                 selected === 'all'
@@ -187,7 +187,6 @@ const ClassList = () => {
                             </select>
                         </th>
                         <th className={`col-md-3 ${style.th}`}>NGÀY ĐĂNG KÝ</th>
-                        {/* <th className={`col-md-3 ${style.th}`}></th> */}
                     </tr>
                 </thead>
                 <tbody>

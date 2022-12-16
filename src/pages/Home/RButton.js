@@ -7,8 +7,8 @@ import { AppContext } from '~/store/appContext'
 
 const RButton = (props) => {
     const context = useContext(AppContext);
-    const findTutor = context.role === '0' ? "/signup" : (context.role === '4' ? "/createclass" : "");
-    const bcTutor = context.role === '0' ? "/signup" : (context.role === '3' ? "/classlist" : "");
+    const findTutor = context.role === '' ? "/signup" : (context.role === 'NguoiCanTimGiaSu' ? "/createclass" : "");
+    const bcTutor = context.role === '' ? "/signup" : (context.role === 'GiaSu' ? "/classlist" : "");
 
     return (
         <div>
@@ -16,7 +16,7 @@ const RButton = (props) => {
                 <div className={style.container}>
 
                     {
-                        (context.role === '0' || context.role === '4') &&
+                        (context.role === '' || context.role === 'NguoiCanTimGiaSu') &&
                         <>
                             <i className={`fa-xl fa-solid fa-caret-right ${style.arrow}`}></i>
                             <i className={`fa-xl fa-solid fa-caret-right ${style.arrow}`}></i>
@@ -30,7 +30,7 @@ const RButton = (props) => {
                 :
                 <div className={style.container}>
                     {
-                        (context.role === '0' || context.role === '3') &&
+                        (context.role === '' || context.role === 'GiaSu') &&
                         <>
                             <i className={`fa-xl fa-solid fa-caret-right ${style.whiteArrow}`}></i>
                             <i className={`fa-xl fa-solid fa-caret-right ${style.whiteArrow}`}></i>

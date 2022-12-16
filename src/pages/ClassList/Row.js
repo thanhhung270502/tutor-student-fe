@@ -2,20 +2,11 @@ import React, { useState, useEffect, useContext } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
-import { AppContext } from '~/store/appContext'
 import style from '../../components/GlobalStyles/table.module.scss'
+import { AppContext } from '~/store/appContext'
 
-const ClassDetails = (props) => {   
+const ClassDetails = (props) => {
     const [info, setInfo] = useState(props.info)
-
-    /* useEffect(() => {
-        // use api/ wait until data is updated
-        async () => {
-            info = await getClassInfo();
-            setClassInfo(info);
-        }
-    }, []); */
-
     return (
         <>
             <tr className={`${style.modal}`}>
@@ -64,18 +55,36 @@ const Row = (props) => {
     const context = useContext(AppContext);
 
     const toggleShow = () => {
-        (context.role === '1' ||
-            context.role === '2' ||
-            context.role === '3') ? setShow(!show) : setShow(false);
+        (context.role === 'QuanLyHeThong' ||
+            context.role === 'QuanLyChuyenMon' ||
+            context.role === 'GiaSu') ? setShow(!show) : setShow(false);
     }
+
+    const create_day = new Date(c.created_at);
+    const [classID, setClassID] = useState('');
+    useEffect(() => {
+        if (c.subject === 'TOÁN') setClassID(`T${c.id}`);
+        else if (c.subject === 'VẬT LÝ') setClassID(`VL${c.id}`);
+        else if (c.subject === 'HÓA HỌC') setClassID(`HH${c.id}`);
+        else if (c.subject === 'SINH HỌC') setClassID(`SH${c.id}`);
+        else if (c.subject === 'ANH VĂN') setClassID(`AV${c.id}`);
+        else if (c.subject === 'NGỮ VĂN') setClassID(`NV${c.id}`);
+        else setClassID(`K${c.id}`);
+    }, [])
 
     return (
         <>
-            <tr onClick={toggleShow}>
-                <td>{c.classID}</td>
-                <td>{c.subject}</td>
-                <td>{c.grade}</td>
-                <td>{c.date}</td>
+            <tr className={style.tr} onClick={toggleShow}>
+                <td className={`col-md-3 ${clsx(style.td)}`}>{
+                    classID
+                }</td>
+                <td className={`col-md-3 ${clsx(style.td)}`}>{c.subject}</td>
+                <td className={`col-md-3 ${clsx(style.td, style.center)}`}>{c.grade}</td>
+                <td className={`col-md-3 ${clsx(style.td)}`}>{create_day.toLocaleString('vi-VN', {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "numeric"
+                })}</td>
 
             </tr>
             {show && <ClassDetails info={classData} />}

@@ -3,8 +3,6 @@ import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
 import './login.scss';
 import images from '~/assets/images';
-import axios from 'axios';
-import { setCookie } from '../../api/cookie';
 import { login } from '~/api/api';
 
 

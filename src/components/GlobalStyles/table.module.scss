@@ -17,7 +17,7 @@
 }
 
 .table th {
-    padding: 2rem 1.5rem !important;    
+    padding: 2rem 1.5rem !important;
     border: none;
 }
 
@@ -50,7 +50,7 @@
 .table tbody tr:nth-of-type(2n+1) {
     background-color: #f8f8f8;
 }
-    
+
 .table tbody tr:hover {
     background-color: #ffedef;
 }
@@ -58,13 +58,14 @@
 .table tbody tr:last-child td:first-child {
     border-radius: 0 0 0 2rem;
 }
+
 .table tbody tr:last-child td:last-child {
     border-radius: 0 0 2rem 0;
 }
 
 .pagi {
     background-color: #ff97a5;
-    color:#090526;
+    color: #090526;
     padding: 0 0.5rem;
     border: none;
     border-radius: 1rem;
@@ -81,7 +82,7 @@
 
 /* *******ROW******* */
 
-.detail{
+.detail {
     padding: 1rem !important;
     color: #1a1a1a;
     font-size: 0.8rem;
