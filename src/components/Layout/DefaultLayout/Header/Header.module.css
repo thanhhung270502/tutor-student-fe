@@ -26,7 +26,7 @@
 
     .login,
     .signup {
-        color: white;
+        color: white !important;
         border-radius: 2rem;
         margin: 1rem;
         padding: 0.2rem 1rem;
@@ -53,7 +53,7 @@
     .login:hover,
     .signup:hover {
         /* background-color: #7D73C1; */
-        color: white;
+        color: white !important;
         background-position: 100% 0;
         -o-transition: all 0.4s ease-in-out;
         -webkit-transition: all 0.4s ease-in-out;

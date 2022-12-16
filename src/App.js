@@ -32,27 +32,27 @@ function App() {
                 <Route path="/aboutus" element={<AboutUs />} />
                 <Route path="/classlist" element={<ClassList />} />
                 /************* only REGISTERED USER *************/
-                {context.role !== '0' && (
+                {context.role !== '' && (
                     <>
                         <Route path="/personal_info" element={<Personal_info />} />
                     </>
                 )}
                 /************* only guest *************/
-                {context.role === '0' && (
+                {context.role === '' && (
                     <>
                         <Route path="/login" element={<Login />} />
                         <Route path="/signup" element={<SignUp />} />
                     </>
                 )}
                 /************* only system admin *************/
-                {context.role === '1' && (
+                {context.role === 'QuanLyHeThong' && (
                     <>
                         <Route path="/userAccounts" element={<UserAccounts />} />
                         <Route path="/thongke" element={<Thongke/>}/>
                     </>
                 )}
                 /************* only professional admin *************/
-                {context.role === '2' && (
+                {context.role === 'QuanLyChuyenMon' && (
                     <>
                         <Route path="/tutorlist" element={<ListTutor />} />
                         <Route path="/pendingclass" element={<PendingClass />} />
@@ -60,14 +60,14 @@ function App() {
                     </>
                 )}
                 /************* only tutor *************/
-                {context.role === '3' && (
+                {context.role === 'GiaSu' && (
                     <>
                         <Route path="/payment" element={<Payment />} />
                         <Route path="/paymentList" element={<PaymentList />} />
                     </>
                 )}
                 /************* only student *************/
-                {context.role === '4' && (
+                {context.role === 'NguoiCanTimGiaSu' && (
                     <>
                         <Route path="/createclass" element={<Createclass />} />
                     </>

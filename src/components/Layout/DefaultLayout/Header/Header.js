@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import style from './Header.module.css';
 import Search from '../Search';
 import { AppContext } from '../../../../store/appContext';
+import LogOutBtn from './Logout';
 
 const Guest = () => {
     const guest = ['Tìm gia sư', 'Trở thành gia sư', 'About us'];
@@ -61,9 +62,7 @@ const ProfessionalAdmin = () => {
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} >
-                            Đăng xuất
-                        </button>
+                        <LogOutBtn />
                     </li>
                 </ul>
             </li>
@@ -99,9 +98,7 @@ const SystemAdmin = () => {
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`}>
-                            Đăng xuất
-                        </button>
+                        <LogOutBtn />
                     </li>
                 </ul>
             </li>
@@ -132,7 +129,7 @@ const Student = () => {
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`}>Đăng xuất</button>
+                        <LogOutBtn />
                     </li>
                 </ul>
             </li>
@@ -171,10 +168,7 @@ const Tutor = () => {
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <button className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`}
-                        onClick={async () => {context.logout();}}>
-                            Đăng xuất
-                        </button>
+                        <LogOutBtn />
                     </li>
                 </ul>
             </li>
@@ -200,16 +194,11 @@ function Header() {
             </button>
             <div className={`collapse navbar-collapse ${style.grbut}`} id="navLinks">
                 <ul className={`navbar-nav ms-auto`}>
-                    {/* <Guest /> */}
-                    {/* <SystemAdmin /> */}
-                    {/* <ProfessionalAdmin /> */}
-                    {/* <Student /> */}
-                    {/* <Tutor /> */}
-                    {context.role === '0' && <Guest />}
-                    {context.role === '1' && <SystemAdmin />}
-                    {context.role === '2' && <ProfessionalAdmin />}
-                    {context.role === '3' && <Tutor />}
-                    {context.role === '4' && <Student />}
+                    {context.role === '' && <Guest />}
+                    {context.role === 'QuanLyHeThong' && <SystemAdmin />}
+                    {context.role === 'QuanLyChuyenMon' && <ProfessionalAdmin />}
+                    {context.role === 'GiaSu' && <Tutor />}
+                    {context.role === 'NguoiCanTimGiaSu' && <Student />}
                 </ul>
             </div>
         </nav>
