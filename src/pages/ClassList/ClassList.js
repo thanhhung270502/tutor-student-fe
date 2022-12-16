@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
-import style from '../../components/GlobalStyles/table.module.scss'
+import style from './classList.module.css'
 import { Table } from 'react-bootstrap'
 import { usePagination } from 'react-use-pagination';
 import { useContext } from 'react'
