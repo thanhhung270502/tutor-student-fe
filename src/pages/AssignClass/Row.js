@@ -63,9 +63,9 @@ const ClassDetails = (props) => {
                     <Container>
                         <Table className={style['small-table']} hover>
                             <thead>
-                                <th>Gia sư đăng kí</th>
-                                <th>Ngày đăng kí</th>
-                                <th></th>
+                                <th style={{'padding': '1rem 0'}}>Gia sư đăng kí</th>
+                                <th style={{'padding': '1rem 0'}}>Ngày đăng kí</th>
+                                <th style={{'padding': '1rem 0'}}></th>
                             </thead>
                             <tbody>
                                 {RegiseredTutor.map((tutor, index) =>
@@ -107,24 +107,6 @@ const Row = (props) => {
                     <td onClick={toggleShow} className={`col-md-2 align-middle ${clsx(style.td)}`}>{c.subject}</td>
                     <td onClick={toggleShow} className={`col-md-1 align-middle ${clsx(style.td, style.center)}`}>{c.grade}</td>
                     <td onClick={toggleShow} className={`col-md-3 align-middle ${clsx(style.td)}`}>{c.date}</td>
-                    <td className={`col-md-2 align-middle ${style.td}`}>
-                        <button type="button"
-                            className={`btn ${style.accept}`}
-                            onClick={() => {
-                                setDel(false);
-                                console.log("accepted!");
-                            }}>
-                            Đồng ý
-                        </button>
-                        <button type="button"
-                            className={`btn ms-4 ${style.decline}`}
-                            onClick={() => {
-                                setDel(false);
-                                console.log("DECLINED!");
-                            }}>
-                            Từ chối
-                        </button>
-                    </td>
                 </tr>)
             }
             {show && <ClassDetails info={classData} />}

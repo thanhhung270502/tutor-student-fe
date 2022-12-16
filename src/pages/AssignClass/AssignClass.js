@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
-import style from '../../components/GlobalStyles/table.module.scss'
+import style from './PendingClass.module.css'
 import Row from './Row'
 import { Table } from 'react-bootstrap'
 import data from './ClassList.json'
@@ -31,7 +31,6 @@ const PendingClass = () => {
                     <th className={`col-md-2 ${style.th}`}>MÔN</th>
                     <th className={`col-md-1 ${clsx(style.th, style.center)}`}>LỚP</th>
                     <th className={`col-md-3 ${style.th}`}>NGÀY ĐĂNG KÝ</th>
-                    <th className={`col-md-2 ${style.th}`}></th>
                 </thead>
                 <tbody>
                     {
