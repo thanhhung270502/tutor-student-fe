@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
-import style from '../../components/GlobalStyles/table.module.scss'
+import style from './classList.module.css'
 import { AppContext } from '~/store/appContext'
 
 const ClassDetails = (props) => {
