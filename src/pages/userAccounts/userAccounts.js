@@ -119,9 +119,12 @@ const UserAccounts = () => {
                     </thead>
                     <tbody className={style.column}>
                         {
-                            currentClassInfo.map(
-                                (c, index) => (
-                                    <Row key={index} data={currentClassInfo[index]} c={c} />
+                            // currentClassInfo.map(
+                            //     (c, index) => (
+                            //         <Row key={index} data={currentClassInfo[index]} c={c} />
+                            // ))
+                            currentClassInfo.map((c, index) => (
+                                <Row key={index} data={currentClassInfo[index]} c={c} />
                             ))
                         }
                     </tbody>

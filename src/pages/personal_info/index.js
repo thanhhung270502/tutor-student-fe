@@ -34,7 +34,7 @@ function Personal_info({children}) {
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
                 <Sidebar>
-                    {context.role != 1 && context.role != 2 ? 
+                    {context.role !== "QuanLyHeThong" && context.role !== "QuanLyChuyenMon" ? 
                         <aside className={cx('buttonWrapper')}>
                                 <button 
                                     onClick={handleClickButton0}
@@ -48,8 +48,8 @@ function Personal_info({children}) {
                 </Sidebar>
                 <div className={cx('content')}>
                     {
-                        ID == 1 ?
-                        (context.role == 3 ?
+                        ID == "QuanLyHeThong" ?
+                        (context.role == "GiaSu" ?
                                 <p className={cx('title')}>CÁC LỚP ĐANG DẠY</p>
                                 : <p className={cx('title')}>CÁC LỚP ĐÃ TẠO</p>)
                         : <p className={cx('title')}>THÔNG TIN CÁ NHÂN</p>
