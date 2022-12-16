@@ -5,7 +5,9 @@ import clsx from 'clsx'
 import style from './classList.module.css'
 import { Table } from 'react-bootstrap'
 import { usePagination } from 'react-use-pagination';
+import { useContext } from 'react'
 // import data from './ClassList.json';
+import { AppContext } from '~/store/appContext'
 import { getClassInfo } from '~/api/api'
 
 import Row from './Row';
@@ -17,6 +19,8 @@ const ClassList = () => {
     const [currentClassInfo, setCurrentClassInfo] = useState([]);
     // 0: default, 1: filter subject, 2: filter class, 3: filter both
     const [number, setNumber] = useState(0);
+    const context = useContext(AppContext);
+
 
     useEffect(() => {
         (
@@ -187,6 +191,10 @@ const ClassList = () => {
                             </select>
                         </th>
                         <th className={`col-md-3 ${style.th}`}>NGÀY ĐĂNG KÝ</th>
+                        {
+                            context.role === 'GiaSu' &&
+                            <th></th>
+                        }
                     </tr>
                 </thead>
                 <tbody>
