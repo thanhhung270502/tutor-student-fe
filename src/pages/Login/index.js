@@ -5,15 +5,13 @@ import './login.scss';
 import images from '~/assets/images';
 import axios from 'axios';
 import { setCookie } from '../../api/cookie';
-// import { setCookie } from '../../api/api';
+import { login } from '~/api/api';
 
 
 const cx = classNames.bind(styles);
 
 function Login() {
     const [loginErr, setLoginErr] = useState(false);
-
-    const URL = "http://localhost:3000";
     const [info, setInfo] = useState({
         email: '',
         password: ''
@@ -23,25 +21,9 @@ function Login() {
         const { name, value } = event.target;
         setInfo(prev => ({
             ...prev,
-            [name]: value.toUpperCase(),
+            [name]: value,
         }));
         setLoginErr(false);
-    }
-
-    const login = async (info) => {
-        const res = await axios.post(`${URL}/auth/sign_in`, info)
-            .then(function (response) {
-                const dt = response.data.data;
-                console.log(dt);
-                setCookie("user_id", dt.id, 30);
-                setCookie("role", dt.role, 30);
-                return response;
-            })
-            .catch(function (error) {
-                console.log(error.response.status);
-                return error.response;
-            });
-        return res;
     }
 
     const handleSubmit = async (e) => {

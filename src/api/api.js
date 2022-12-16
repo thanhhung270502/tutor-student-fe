@@ -3,6 +3,25 @@ import { setCookie } from "./cookie";
 
 const URL = "http://localhost:3000";
 
+export const signup = async (info) => {
+    const res = await axios.post(`${URL}/auth`, info)
+        .then(
+            function (response) {
+                // const dt =esponse.data.data;
+                // console.log(dt);
+                // setCookie("user_id", dt.id, 30);
+                // setCookie("role", dt.role, 30);
+                return response;
+            }
+        )
+        .catch(
+            function (error) {
+                console.log(error);
+                return error.response;
+            }
+        )
+}
+
 export const login = async (info) => {
     const res = await axios.post(`${URL}/auth/sign_in`, info)
         .then(function (response) {
