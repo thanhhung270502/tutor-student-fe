@@ -17,17 +17,17 @@ function Info () {
     // console.log(context.role);
 
     function handleRoles () {
-        if(context.role == 1) return "Quản lí hệ thống";
-        else if(context.role == 2) return "Quản lí chuyên môn";
-        else if(context.role == 3) return "Gia sư"
-        else if(context.role == 4) return "Học viên";
+        if(context.role == "QuanLyHeThong") return "Quản lí hệ thống";
+        else if(context.role == "QuanLyChuyenMon") return "Quản lí chuyên môn";
+        else if(context.role == "GiaSu") return "Gia sư"
+        else if(context.role == "NguoiCanTimGiaSu") return "Học viên";
     }
 
     roles = handleRoles();
 
     return (
         <div className={cx('infoWrapper')}>
-            <div className={(context.role != 1 && context.role != 2) ? cx('info1') : cx("info2")}>
+            <div className={(context.role !== "QuanLyHeThong" && context.role !== "QuanLyChuyenMon") ? cx('info1') : cx("info2")}>
                 <img src={image} /*style={{ width: "50%", height: "50%" }}*/ className={cx('image')}/>
                 <p className={cx('name')}>Nguyễn Văn A</p>
                 <p className={cx('role')}>{roles}</p>
