@@ -11,17 +11,7 @@
     color: black;
     border: none;
 }
-#year{
-    background-color: #7D73C1,
-}
-#type
-{
-   background-color: #FF727D;
-}
-#often
-{
-   background-color: #F3AC46,
-}
+
 .col-9{
     position: relative;
     background-color: white;
@@ -43,4 +33,15 @@
     padding-bottom: 75px;
     padding-left: 40px;
     padding-right:40px;
+}
+.row{
+    display: inline;
+}
+.selects{
+    label{
+        padding: 0.5%;
+    }
+}
+#type, #year, #often, #tm, #wk{
+    height: 35px;
 }
