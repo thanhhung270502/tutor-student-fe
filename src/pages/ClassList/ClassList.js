@@ -152,12 +152,12 @@ const ClassList = () => {
                                 }}
                             >
                                 <option value="all">TẤT CẢ</option>
-                                <option value="Toán">TOÁN</option>
-                                <option value="Vật lý">VẬT LÝ</option>
-                                <option value="Hoá học">HOÁ HỌC</option>
-                                <option value="Anh văn">ANH VĂN</option>
-                                <option value="Sinh học">SINH HỌC</option>
-                                <option value="Ngữ văn">NGỮ VĂN</option>
+                                <option value="TOÁN">TOÁN</option>
+                                <option value="VẬT LÝ">VẬT LÝ</option>
+                                <option value="HÓA HỌC">HOÁ HỌC</option>
+                                <option value="ANH VĂN">ANH VĂN</option>
+                                <option value="SINH HỌC">SINH HỌC</option>
+                                <option value="NGỮ VĂN">NGỮ VĂN</option>
                                 <option value="Khác">KHÁC</option>
                             </select>
                         </th>

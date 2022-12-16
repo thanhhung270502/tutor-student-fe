@@ -113,7 +113,7 @@ function Createclass() {
                                                 <option value="Toán">
                                                     Toán
                                                 </option>
-                                                <option value="Tiếng Việt">Tiếng Việt</option>
+                                                <option value="Ngữ văn">Ngữ văn</option>
                                                 <option value="Vật Lý">Vật Lý</option>
                                                 <option value="Hóa Học">Hóa Học</option>
                                                 <option value="Sinh Học">Sinh Học</option>
