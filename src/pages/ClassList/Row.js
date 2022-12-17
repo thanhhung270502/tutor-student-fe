@@ -4,8 +4,6 @@ import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
 import style from './classList.module.css'
 import { AppContext } from '~/store/appContext'
-import btnStyle from './ClassList.module.scss'
-
 
 const ClassDetails = (props) => {
     const [info, setInfo] = useState(props.info)
@@ -91,7 +89,7 @@ const Row = (props) => {
                     context.role === 'GiaSu' &&
                     <td className={`col-md-3 ${clsx(style.td)}`}>
                         <button type="button"
-                            className={`btn ${btnStyle.accept}`}>
+                            className={`btn ${style.accept}`}>
                             Đăng kí
                         </button>
                     </td>
