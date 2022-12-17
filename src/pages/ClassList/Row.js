@@ -89,10 +89,13 @@ const Row = (props) => {
                 })}</td>
                 {
                     context.role === 'GiaSu' &&
-                    <button type="button"
-                        className={`btn ${btnStyle.accept}`}>
-                        Đồng ý
-                    </button>
+                    <td className={`col-md-3 ${clsx(style.td)}`}>
+                        <button type="button"
+                            className={`btn ${btnStyle.accept}`}>
+                            Đăng kí
+                        </button>
+                    </td>
+
                 }
             </tr>
             {show && <ClassDetails info={classData} />}
