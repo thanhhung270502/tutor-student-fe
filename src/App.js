@@ -55,7 +55,7 @@ function App() {
                 {context.role === 'QuanLyHeThong' && (
                     <>
                         <Route path="/userAccounts" element={<UserAccounts />} />
-                        <Route path="/thongke" element={<Thongke/>}/>
+                        <Route path="/admin_thongke" element={<Thongke/>}/>
                     </>
                 )}
                 /************* only professional admin *************/
