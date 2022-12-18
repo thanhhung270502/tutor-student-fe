@@ -72,6 +72,7 @@ function App() {
                     <>
                         <Route path="/payment" element={<Payment />} />
                         <Route path="/paymentList" element={<PaymentList />} />
+                       
                     </>
                 )}
                 /************* only student *************/

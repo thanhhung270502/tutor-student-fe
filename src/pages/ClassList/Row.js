@@ -9,23 +9,25 @@ import btnStyle from './ClassList.module.scss'
 
 const ClassDetails = (props) => {
     const [info, setInfo] = useState(props.info)
+    const [click, setClick] = useState(false);
+    const context = useContext(AppContext)
     return (
         <>
             <tr className={`${style.modal}`}>
                 <td colSpan="2" className={`${clsx(style.detail)}`}>
                     <i className={`fa-regular fa-clock ${style.icon}`}></i>
-                    Thời gian: {info.date}
+                    Thời gian: {info.time}
                 </td>
                 <td colSpan="2" className={`${clsx(style.detail)}`}>
                     <i className={`fi fi-rr-arrow-square-right ${style.icon}`}></i>
-                    Độ dài khoá học: {info.courseLength}
+                    Độ dài khoá học: {`TỪ ${info.time_to_start} ĐẾN ${info.time_to_end}`}
                 </td>
 
             </tr>
             <tr className={`${style.modal}`}>
                 <td colSpan="2" className={`${clsx(style.detail)}`}>
                     <i className={`fi fi-rr-globe ${style.icon}`}></i>
-                    Hình thức: {info.isOffline === "true" ? "Offline" : "Online"}</td>
+                    Hình thức: {info.formality === '2' ? 'OFFLINE' : 'ONLINE'}</td>
                 <td colSpan="2" className={`${clsx(style.detail)}`}>
                     <i className={`fi fi-rr-phone-call ${style.icon}`}></i>
                     SĐT: {info.phone}</td>
@@ -40,11 +42,20 @@ const ClassDetails = (props) => {
             </tr>
             <tr className={`${style.modal}`}>
                 <td colSpan="2" className={`${clsx(style.detail)}`}>
-                    <i className={`fi fi-rr-time-forward ${style.icon}`}></i>
-                    Thời gian học: {info.studyTime}</td>
-                <td colSpan="2" className={`${clsx(style.detail)}`}>
                     <i className={`fi fi-rr-notebook ${style.icon}`}></i>
                     Yêu cầu: {info.requirement}</td>
+                <td colSpan="2" className={`${clsx(style.detail)}`}>
+                    {/* <i className={`fi fi-rr-time-forward ${style.icon}`}></i> */}
+                    {
+                        (context.role === "GiaSu") ?
+                            (!click ? <button type="button" onClick={() => { setClick(true) }}
+                                className={`btn ${btnStyle.accept}`}>
+                                Đăng ký
+                            </button> : "Đã đăng ký")
+                            : ""
+                    }
+                </td>
+
             </tr>
         </>
     )
@@ -65,11 +76,13 @@ const Row = (props) => {
     const create_day = new Date(c.created_at);
     const [classID, setClassID] = useState('');
     useEffect(() => {
-        if (c.subject === 'TOÁN') setClassID(`T${c.id}`);
+        if (c.subject === 'TOÁN') setClassID(`TH${c.id}`);
         else if (c.subject === 'VẬT LÝ') setClassID(`VL${c.id}`);
         else if (c.subject === 'HÓA HỌC') setClassID(`HH${c.id}`);
         else if (c.subject === 'SINH HỌC') setClassID(`SH${c.id}`);
         else if (c.subject === 'ANH VĂN') setClassID(`AV${c.id}`);
+        else if (c.subject === 'LỊCH SỬ') setClassID(`LS${c.id}`);
+        else if (c.subject === 'ĐỊA LÝ') setClassID(`DL${c.id}`);
         else if (c.subject === 'NGỮ VĂN') setClassID(`NV${c.id}`);
         else setClassID(`K${c.id}`);
     }, [])
@@ -87,15 +100,15 @@ const Row = (props) => {
                     month: "2-digit",
                     day: "numeric"
                 })}</td>
-                {
+                {/* {
                     context.role === 'GiaSu' &&
                     <button type="button"
                         className={`btn ${btnStyle.accept}`}>
                         Đồng ý
                     </button>
-                }
+                } */}
             </tr>
-            {show && <ClassDetails info={classData} />}
+            {show && <ClassDetails info={classData} c={c} />}
         </>
     )
 }

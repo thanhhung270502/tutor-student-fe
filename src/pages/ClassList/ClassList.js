@@ -191,10 +191,6 @@ const ClassList = () => {
                             </select>
                         </th>
                         <th className={`col-md-3 ${style.th}`}>NGÀY ĐĂNG KÝ</th>
-                        {
-                            context.role === 'GiaSu' &&
-                            <th></th>
-                        }
                     </tr>
                 </thead>
                 <tbody>

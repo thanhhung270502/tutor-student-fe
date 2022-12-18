@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {Link} from 'react-router-dom'
 import "bootstrap/dist/js/bootstrap.min.js"
 import clsx from 'clsx'
 import style from '../../components/GlobalStyles/table.module.scss'
@@ -75,7 +76,7 @@ const Row = (props) => {
                 <td>{c.grade}</td>
                 <td>{c.date}</td>
                 <td>{c.payment}</td>
-                <td><Button className={ButtonStyle['custom-payment-button']} onClick={toggleShow}>Thanh toán</Button></td>
+                <td><Link className={`btn ${ButtonStyle['custom-payment-button']}`} to="/payment">Thanh toán</Link></td>
             </tr>
             {show && <ClassDetails info={classData} />}
         </>

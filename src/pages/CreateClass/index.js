@@ -33,6 +33,7 @@ function Createclass() {
         // await createClass(data);
         const res = await createClass(data);
         console.log(res);
+        alert('Tạo lớp thành công! ^3^')
     }
 
     return (

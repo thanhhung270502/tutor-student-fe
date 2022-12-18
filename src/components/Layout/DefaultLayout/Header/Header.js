@@ -71,8 +71,8 @@ const ProfessionalAdmin = () => {
 };
 
 const SystemAdmin = () => {
-    const sysadmin = ['Trang chủ', 'Danh sách user'];
-    const link = ['/', '/userAccounts'];
+    const sysadmin = ['Trang chủ', 'Danh sách user', 'Lớp học'];
+    const link = ['/', '/userAccounts', '/classlist'];
     return (
         <React.Fragment>
             {sysadmin.map((v, index) => (
@@ -163,7 +163,7 @@ const Tutor = () => {
                         </Link>
                     </li>
                     <li className={`nav-item`}>
-                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/paymentStatus">
+                        <Link className={`nav-link dropdown-item ${clsx(style.dropdownItem)}`} to="/paymentlist">
                             Thanh toán
                         </Link>
                     </li>

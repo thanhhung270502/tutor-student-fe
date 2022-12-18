@@ -10,9 +10,9 @@ import style from './Home.module.css'
 const HomePage1 = () => {
     useEffect(() => {
         AOS.init({
-          duration : 2000
+            duration: 2000
         });
-      }, []);
+    }, []);
     return (
         <React.Fragment>
             < div className={`row ${clsx(style.container1)}`}>
